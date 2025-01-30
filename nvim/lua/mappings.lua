@@ -37,9 +37,9 @@ map("n", "<Leader>ct", "<cmd>CompilerToggleResults<CR>", { desc = "Toggle compil
 map("n", "<Leader>cr", "<cmd>CompilerRedo<CR>", { desc = "Redo last compiler job" })
 map("n", "<Leader>cS", "<cmd>CompilerStop<CR>", { desc = "Stop compiler" })
 
-map("n", "<Leader>tb", function()
+map("n", "<Leader>q", function()
   require("dap").toggle_breakpoint()
-end, { desc = "Toggle debug bp" })
+end, { desc = "Debug toggle bp" })
 
 map("n", "<Leader>dc", function()
   require("dap").continue()
@@ -59,9 +59,9 @@ end, { desc = "Debug step out" })
 
 map("n", "<Leader>sy", function()
   require("dap").step_back()
-end, { desc = "Debug repl" })
+end, { desc = "Debug step back" })
 
-map("n", "<Leader>dz", function()
+map("n", "<Leader>da", function()
   require("dapui").toggle()
 end, { desc = "Debug ui toggle" })
 
