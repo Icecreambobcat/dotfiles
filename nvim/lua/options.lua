@@ -1,0 +1,14 @@
+require "nvchad.options"
+
+-- add yours here!
+
+local o = vim.o
+o.cursorlineopt = "both" -- to enable cursorline!
+
+o.spelllang = "en_gb"
+o.relativenumber = true
+o.number = true
+o.termguicolors = true
+
+o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.g.codeium_disable_bindings = 1

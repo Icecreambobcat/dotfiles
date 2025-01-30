@@ -1,0 +1,10 @@
+include fonts.conf
+include window.conf
+include misc.conf
+include keybinds.conf
+
+
+# BEGIN_KITTY_THEME
+# Cherry Midnight
+include current-theme.conf
+# END_KITTY_THEME
