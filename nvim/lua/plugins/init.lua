@@ -642,4 +642,11 @@ return {
       preset = "modern",
     },
   },
+  {
+    "andweeb/presence.nvim",
+    event = "VeryLazy",
+    opts = {
+      neovim_image_text = "I'm literally better than you"
+    }
+  },
 }
