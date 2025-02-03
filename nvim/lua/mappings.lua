@@ -41,23 +41,23 @@ map("n", "<Leader>q", function()
   require("dap").toggle_breakpoint()
 end, { desc = "Debug toggle bp" })
 
-map("n", "<Leader>dc", function()
+map("n", "<Leader>a", function()
   require("dap").continue()
 end, { desc = "Debug Continue" })
 
-map("n", "<Leader>so", function()
+map("n", "<Leader>o", function()
   require("dap").step_over()
 end, { desc = "Debug step over" })
 
-map("n", "<Leader>si", function()
+map("n", "<Leader>i", function()
   require("dap").step_into()
 end, { desc = "Debug step into" })
 
-map("n", "<Leader>su", function()
+map("n", "<Leader>p", function()
   require("dap").step_out()
 end, { desc = "Debug step out" })
 
-map("n", "<Leader>sy", function()
+map("n", "<Leader>u", function()
   require("dap").step_back()
 end, { desc = "Debug step back" })
 
