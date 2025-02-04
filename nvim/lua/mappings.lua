@@ -28,8 +28,8 @@ map("n", "<Leader>ww", function()
   require("focus").split_nicely()
 end, { desc = "Split nicely" })
 
-map("n", "<Leader>WW", "<cmd>FocusMaxOrEqual<CR>", { desc = "Toggle Maximise" })
-map("n", "<Leader>WR", "<cmd>FocusAutoresize<CR>", { desc = "GR tiling" })
+map("n", "<Leader>M", "<cmd>FocusMaxOrEqual<CR>", { desc = "Toggle Maximise" })
+map("n", "<Leader>ar", "<cmd>FocusAutoresize<CR>", { desc = "GR tiling" })
 map("n", "<Leader>wd", "<c-w><c-q>", { desc = "Close focused window" })
 
 map("n", "<Leader>cm", "<cmd>CompilerOpen<CR>", { desc = "Open compiler" })
