@@ -29,7 +29,7 @@ map("n", "<Leader>ww", function()
 end, { desc = "Split nicely" })
 
 map("n", "<Leader>M", "<cmd>FocusMaxOrEqual<CR>", { desc = "Toggle Maximise" })
-map("n", "<Leader>ar", "<cmd>FocusAutoresize<CR>", { desc = "GR tiling" })
+map("n", "<Leader>R", "<cmd>FocusAutoresize<CR>", { desc = "GR tiling" })
 map("n", "<Leader>wd", "<c-w><c-q>", { desc = "Close focused window" })
 
 map("n", "<Leader>cm", "<cmd>CompilerOpen<CR>", { desc = "Open compiler" })

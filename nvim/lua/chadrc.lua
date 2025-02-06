@@ -1,7 +1,7 @@
 local options = {
 
   base46 = {
-    theme = "onedark",
+    theme = "tokyonight",
     hl_add = {},
     hl_override = {
       Comment = { italic = true },
