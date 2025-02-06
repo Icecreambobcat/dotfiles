@@ -652,7 +652,7 @@ return {
   {
     "sphamba/smear-cursor.nvim",
     opts = {
-      cursor_color = "#68d4f2",
+      cursor_color = "#0cfade",
       stiffness = 0.3,
       trailing_stiffness = 0.1,
       trailing_exponent = 5,
