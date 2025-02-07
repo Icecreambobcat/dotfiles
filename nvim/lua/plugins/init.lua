@@ -659,6 +659,8 @@ return {
       hide_target_hack = true,
       gamma = 1,
       slowdown_exponent = 0.1,
+      max_length = 40,
+      time_interval = 15,
     },
     keys = {
       {
