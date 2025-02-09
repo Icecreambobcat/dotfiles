@@ -61,6 +61,10 @@ map("n", "<Leader>u", function()
   require("dap").step_back()
 end, { desc = "Debug step back" })
 
+map("n", "<Leader>T", function()
+  require("dap").terminate()
+end, { desc = "Debug terminate" })
+
 map("n", "<Leader>da", function()
   require("dapui").toggle()
 end, { desc = "Debug ui toggle" })
