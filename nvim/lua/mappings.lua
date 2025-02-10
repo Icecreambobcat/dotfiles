@@ -6,9 +6,8 @@ local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 
-for i = 1, 9 do
-  map("n", "<C-" .. i .. ">", i .. "gt", { desc = "Switch to buffer " .. i })
-end
+map("n", "<C-=>", "gt", { desc = "Window Fwd" })
+map("n", "<C-->", "gT", { desc = "Window Bwd" })
 
 map("n", "<leader>sp", "<cmd> set spell! <cr>", { desc = "Toggle spell check" })
 
