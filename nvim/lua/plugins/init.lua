@@ -514,97 +514,9 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-      bigfile = { enabled = false },
-      notifier = { enabled = true },
-      quickfile = { enabled = true },
-      statuscolumn = { enabled = true },
-      words = {
-        enabled = true,
-        debounce = 50,
-        modes = { "n", "c" },
-      },
-      dashboard = {
-        width = 80,
-        preset = {
-          keys = {
-            { icon = " ", key = "<spc>ff", desc = "Telescope find files", action = "<space>ff" },
-            { icon = " ", key = "<spc>fo", desc = "Telescope oldfiles", action = "<space>fo" },
-            { icon = "󰈭 ", key = "<spc>fw", desc = "Telescope live grep", action = "<space>fw" },
-            { icon = "󱥚 ", key = "<spc>th", desc = "Telescope themes", action = "<space>th" },
-            { icon = " ", key = "<spc>ch", desc = "Cheatsheet", action = "<space>ch" },
-            { icon = " ", key = "<spc>fs", desc = "Session search", action = "<space>fs" },
-            { icon = " ", key = "<spc>sd", desc = "Session delete", action = "<space>ds" },
-          },
-          header = [[
-██████╗ ██╗ ██████╗███████╗                                
-██╔══██╗██║██╔════╝██╔════╝                                
-██████╔╝██║██║     █████╗                                  
-██╔══██╗██║██║     ██╔══╝                                  
-██║  ██║██║╚██████╗███████╗                                
-╚═╝  ╚═╝╚═╝ ╚═════╝╚══════╝                                
-
-                ██████╗ ██╗ ██████╗███████╗                
-                ██╔══██╗██║██╔════╝██╔════╝                
-                ██████╔╝██║██║     █████╗                  
-                ██╔══██╗██║██║     ██╔══╝                  
-                ██║  ██║██║╚██████╗███████╗                
-                ╚═╝  ╚═╝╚═╝ ╚═════╝╚══════╝                
-
-                                ██████╗ ██╗ ██████╗███████╗
-                                ██╔══██╗██║██╔════╝██╔════╝
-                                ██████╔╝██║██║     █████╗  
-                                ██╔══██╗██║██║     ██╔══╝  
-                                ██║  ██║██║╚██████╗███████╗
-                                ╚═╝  ╚═╝╚═╝ ╚═════╝╚══════╝
-          ]],
-          --           header = [[
-          -- ██╗   ██╗██╗  ████████╗██╗███╗   ███╗ █████╗ ████████╗███████╗
-          -- ██║   ██║██║  ╚══██╔══╝██║████╗ ████║██╔══██╗╚══██╔══╝██╔════╝
-          -- ██║   ██║██║     ██║   ██║██╔████╔██║███████║   ██║   █████╗
-          -- ██║   ██║██║     ██║   ██║██║╚██╔╝██║██╔══██║   ██║   ██╔══╝
-          -- ╚██████╔╝███████╗██║   ██║██║ ╚═╝ ██║██║  ██║   ██║   ███████╗
-          --  ╚═════╝ ╚══════╝╚═╝   ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝
-          --
-          -- ███████╗ ██████╗ ██████╗  ██████╗███████╗
-          -- ██╔════╝██╔═══██╗██╔══██╗██╔════╝██╔════╝
-          -- █████╗  ██║   ██║██████╔╝██║     █████╗
-          -- ██╔══╝  ██║   ██║██╔══██╗██║     ██╔══╝
-          -- ██║     ╚██████╔╝██║  ██║╚██████╗███████╗
-          -- ╚═╝      ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝
-          --         ]],
-        },
-        sections = {
-          { section = "header" },
-          {
-            pane = 2,
-            section = "terminal",
-            cmd = "pokemon-colorscripts -n vaporeon --no-title ; sleep .1",
-            height = 16,
-            padding = 1,
-          },
-          { section = "keys", gap = 3, padding = 1 },
-          { pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-          { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
-          {
-            pane = 2,
-            icon = " ",
-            title = "Git Status",
-            section = "terminal",
-            enabled = vim.fn.isdirectory ".git" == 1,
-            cmd = "git status --short --branch --renames",
-            height = 5,
-            padding = 1,
-            ttl = 5 * 60,
-            indent = 3,
-          },
-          { section = "startup" },
-        },
-      },
-    },
+    config = function()
+      require "configs.snacks"
+    end,
   },
   {
     "MeanderingProgrammer/markdown.nvim",
@@ -672,5 +584,9 @@ return {
       },
     },
     event = "VeryLazy",
+  },
+  {
+    "echasnovski/mini.nvim",
+    version = false,
   },
 }
