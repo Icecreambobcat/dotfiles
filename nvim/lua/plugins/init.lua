@@ -28,6 +28,34 @@ return {
   --
   {
     "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "beautysh",
+        "black",
+        "clang-format",
+        "clangd",
+        "debugpy",
+        "gh",
+        "google-java-format",
+        "html-lsp",
+        "java-debug-adapter",
+        "java-language-server",
+        "java-test",
+        "jdtls",
+        "latexindent",
+        "lombok-nightly",
+        "lua-language-server",
+        "markdown-oxide",
+        "markdownlint",
+        "openjdk-17",
+        "prettier",
+        "pyright",
+        "spring-boot-tools",
+        "stylua",
+        "texlab",
+        "typescript-language-server",
+      },
+    },
   },
   --
   {
