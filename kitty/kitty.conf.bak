@@ -5,6 +5,6 @@ include keybinds.conf
 
 
 # BEGIN_KITTY_THEME
-# Cherry Midnight
+# Tokyo Night Moon
 include current-theme.conf
 # END_KITTY_THEME
