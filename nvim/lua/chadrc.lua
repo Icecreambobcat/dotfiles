@@ -1,7 +1,7 @@
 local options = {
 
   base46 = {
-    theme = "catppuccin",
+    theme = "tokyonight",
     hl_add = {},
     hl_override = {
       Comment = { italic = true },
@@ -9,7 +9,7 @@ local options = {
     },
     integrations = {},
     changed_themes = {},
-    transparency = false,
+    transparency = true,
   },
 
   ui = {
