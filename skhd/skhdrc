@@ -33,7 +33,7 @@ shift + alt - y : yabai -m space --mirror y-axis
 shift + alt - x : yabai -m space --mirror x-axis
 
 # toggle window float
-alt - space : yabai -m window --toggle float --grid 12:9:1:1:7:10
+alt - space : yabai -m window --toggle float --grid 16:12:1:1:10:14
 
 # maximize a window
 shift + alt - m : yabai -m window --toggle zoom-fullscreen
@@ -133,3 +133,6 @@ shift + ctrl + alt - s : yabai -m window --insert stack
 # New window in hor./ vert. splits for all applications with yabai
 alt - a : yabai -m window --insert east;  skhd -k "cmd - n"
 alt - s : yabai -m window --insert south; skhd -k "cmd - n"
+
+# Scratchpad spotify
+alt - q : yabai -m window --toggle Spotify
