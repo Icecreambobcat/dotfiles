@@ -37,7 +37,7 @@ yabai -m config external_bar               all:0:0       \
 # yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
 
 yabai -m rule --add label="Spotify" app="^Spotify$" scratchpad="Spotify" grid=72:64:1:1:62:70
-yabai -m rule --add label="Discord" app="^Discord$" scratchpad="Discord" grid=72:64:1:1:62:70
+yabai -m rule --add label="Discord" app="^Discord$" title!="^Discord Updater$" scratchpad="Discord" grid=72:64:1:1:62:70
 yabai -m rule --apply
 
 yabai -m config layout bsp
