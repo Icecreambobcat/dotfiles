@@ -635,14 +635,25 @@ return {
         "<leader>==",
         mode = { "n" },
         function()
-          require("lint").try_lint()
-        end,
-      },
-      {
-        "<leader>--",
-        mode = { "n" },
-        function()
-          vim.diagnostic.reset(nil, 0)
+          local lint = require "lint"
+          local bufnr = vim.api.nvim_get_current_buf()
+          local linter = lint.linters_by_ft[vim.bo.filetype]
+
+          if #linter > 0 then
+            local ns = lint.get_namespace(linter[1])
+            -- Check if diagnostics exist for the linter's namespace
+            local diagnostics = vim.diagnostic.get(bufnr, { namespace = ns })
+
+            if #diagnostics > 0 then
+              vim.diagnostic.reset(ns, bufnr)
+              print "Lint diagnostics cleared"
+            else
+              lint.try_lint()
+              print "Linting..."
+            end
+          else
+            print "No configured linters for this filetype"
+          end
         end,
       },
     },
