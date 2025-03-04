@@ -30,7 +30,12 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "flake8",
+        "checkstyle",
+        "vale",
+        "lualint",
         "beautysh",
+        "bibtex-tidy",
         "black",
         "clang-format",
         "clangd",
@@ -53,6 +58,7 @@ return {
         "spring-boot-tools",
         "stylua",
         "texlab",
+        "ltex-ls",
         "typescript-language-server",
       },
     },
@@ -617,5 +623,28 @@ return {
   {
     "echasnovski/mini.nvim",
     version = false,
+  },
+  {
+    "mfussenegger/nvim-lint",
+    config = function()
+      require "configs.linter"
+    end,
+    event = "VeryLazy",
+    keys = {
+      {
+        "<leader>==",
+        mode = { "n" },
+        function()
+          require("lint").try_lint()
+        end,
+      },
+      {
+        "<leader>--",
+        mode = { "n" },
+        function()
+          vim.diagnostic.reset(nil, 0)
+        end,
+      },
+    },
   },
 }

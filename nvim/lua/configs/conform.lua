@@ -7,10 +7,11 @@ local options = {
     python = { "black" },
     cpp = { "clang-format" },
     latex = { "latexindent" },
-    zsh = { "beautysh" },
+    zsh = { "beautysh", timeout_ms = 2000 },
     tex = { "latexindent", timeout_ms = 2000 },
     java = { "google-java-format", timeout_ms = 3500 },
     json = { "prettier" },
+    bib = { "bibtex-tidy" },
   },
   -- format_on_save = {
   --   -- I recommend these options. See :help conform.format for details.
