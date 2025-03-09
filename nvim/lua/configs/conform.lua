@@ -12,6 +12,7 @@ local options = {
     java = { "google-java-format", timeout_ms = 3500 },
     json = { "prettier" },
     bib = { "bibtex-tidy" },
+    yaml = { "prettier" },
   },
   -- format_on_save = {
   --   -- I recommend these options. See :help conform.format for details.
