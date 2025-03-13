@@ -32,7 +32,6 @@ return {
       ensure_installed = {
         "flake8",
         "checkstyle",
-        "vale",
         "lualint",
         "beautysh",
         "bibtex-tidy",
