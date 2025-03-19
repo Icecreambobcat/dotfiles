@@ -130,10 +130,48 @@ return {
   {
     "sindrets/diffview.nvim", -- optional - Diff integration
     keys = {
-      { "<leader>dv", mode = "n", "<cmd>DiffviewOpen<cr>" },
-      { "<esc>", mode = "n", "<cmd>DiffviewClose<cr>" },
-      { "<leader>dr", mode = "n", "<cmd>DiffviewRefresh<cr>" },
-      { "<leader>do", mode = "n", "<cmd>DiffviewOpen --cached<cr>" },
+      {
+        "<leader>dv",
+        function()
+          local function toggle_diffview(cmd)
+            if next(require("diffview.lib").views) == nil then
+              vim.cmd(cmd)
+            else
+              vim.cmd "DiffviewClose"
+            end
+          end
+          toggle_diffview "DiffviewOpen"
+        end,
+        desc = "Diff Index",
+      },
+      -- {
+      --   "<leader>dm",
+      --   function()
+      --     local function toggle_diffview(cmd)
+      --       if next(require("diffview.lib").views) == nil then
+      --         vim.cmd(cmd)
+      --       else
+      --         vim.cmd "DiffviewClose"
+      --       end
+      --     end
+      --     toggle_diffview "DiffviewOpen master..HEAD"
+      --   end,
+      --   desc = "Diff master",
+      -- },
+      {
+        "<leader>df",
+        function()
+          local function toggle_diffview(cmd)
+            if next(require("diffview.lib").views) == nil then
+              vim.cmd(cmd)
+            else
+              vim.cmd "DiffviewClose"
+            end
+          end
+          toggle_diffview "DiffviewFileHistory %"
+        end,
+        desc = "Open diffs for current File",
+      },
     },
   },
   {
@@ -577,8 +615,16 @@ return {
     keys = {
       { "=", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
       { "-", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "r", mode = "o", function()
+        -- require("smear_cursor").toggle()
+        require("flash").remote()
+        -- require("smear_cursor").toggle()
+      end, desc = "Remote Flash" },
+      { "R", mode = { "o", "x" }, function()
+        -- require("smear_cursor").toggle()
+        require("flash").treesitter_search()
+        -- require("smear_cursor").toggle()
+      end, desc = "Treesitter Search" },
       { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     },
   },
@@ -638,7 +684,7 @@ return {
           local bufnr = vim.api.nvim_get_current_buf()
           local linter = lint.linters_by_ft[vim.bo.filetype]
 
-          if #linter > 0 then
+          if linter ~= nil then
             local ns = lint.get_namespace(linter[1])
             -- Check if diagnostics exist for the linter's namespace
             local diagnostics = vim.diagnostic.get(bufnr, { namespace = ns })

@@ -4,7 +4,7 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
+-- map("n", ";", ":", { desc = "CMD enter command mode" })
 
 map("n", "<C-=>", "gt", { desc = "Window Fwd" })
 map("n", "<C-->", "gT", { desc = "Window Bwd" })

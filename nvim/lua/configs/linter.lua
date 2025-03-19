@@ -3,4 +3,5 @@ require("lint").linters_by_ft = {
   java = { "checkstyle" },
   python = { "flake8" },
   lua = { "luacheck" },
+  cpp = { "cpplint" },
 }

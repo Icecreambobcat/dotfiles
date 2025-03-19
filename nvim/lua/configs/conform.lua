@@ -22,3 +22,6 @@ local options = {
 }
 
 require("conform").setup(options)
+
+require("conform").formatters.latexindent = {
+}
