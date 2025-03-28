@@ -9,7 +9,7 @@ local options = {
     },
     integrations = {},
     changed_themes = {},
-    transparency = true,
+    transparency = false,
   },
 
   ui = {
@@ -40,6 +40,7 @@ local options = {
       lazyload = true,
       order = { "treeOffset", "buffers", "tabs", "btns" },
       modules = nil,
+      -- bufwidth = 21,
     },
   },
 
