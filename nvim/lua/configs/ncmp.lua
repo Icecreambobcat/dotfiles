@@ -18,24 +18,16 @@ local options = {
     ["<C-Space>"] = cmp.mapping.complete(), -- Trigger completion
     ["<C-e>"] = cmp.mapping.close(), -- Close completion menu
 
-    ["<CR>"] = cmp.mapping {
-      i = function(fallback)
-        if cmp.visible() and cmp.get_active_entry() then
-          cmp.confirm { behavior = cmp.ConfirmBehavior.Replace, select = false }
-        elseif luasnip.expandable() then
-          luasnip.expand() -- Expand snippet using luasnip
-        else
-          fallback()
-        end
-      end,
-      s = cmp.mapping.confirm { select = true },
-      c = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Replace, select = true },
+    ["<CR>"] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Insert,
+      select = true,
     },
+
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif luasnip.locally_jumpable(1) then
-        luasnip.jump(1)
+      elseif require("luasnip").expand_or_jumpable() then
+        require("luasnip").expand_or_jump()
       else
         fallback()
       end
@@ -44,12 +36,45 @@ local options = {
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif luasnip.locally_jumpable(-1) then
-        luasnip.jump(-1)
+      elseif require("luasnip").jumpable(-1) then
+        require("luasnip").jump(-1)
       else
         fallback()
       end
     end, { "i", "s" }),
+
+    -- ["<CR>"] = cmp.mapping {
+    --   i = function(fallback)
+    --     if cmp.visible() and cmp.get_active_entry() then
+    --       cmp.confirm { behavior = cmp.ConfirmBehavior.Insert, select = false }
+    --     elseif luasnip.expandable() then
+    --       luasnip.expand() -- Expand snippet using luasnip
+    --     else
+    --       fallback()
+    --     end
+    --   end,
+    --   s = cmp.mapping.confirm { select = true },
+    --   c = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Insert, select = true },
+    -- },
+    -- ["<Tab>"] = cmp.mapping(function(fallback)
+    --   if cmp.visible() then
+    --     cmp.select_next_item()
+    --   elseif luasnip.locally_jumpable(1) then
+    --     luasnip.jump(1)
+    --   else
+    --     fallback()
+    --   end
+    -- end, { "i", "s" }),
+    --
+    -- ["<S-Tab>"] = cmp.mapping(function(fallback)
+    --   if cmp.visible() then
+    --     cmp.select_prev_item()
+    --   elseif luasnip.locally_jumpable(-1) then
+    --     luasnip.jump(-1)
+    --   else
+    --     fallback()
+    --   end
+    -- end, { "i", "s" }),
   },
 
   sources = cmp.config.sources({

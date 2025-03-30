@@ -703,4 +703,10 @@ return {
       },
     },
   },
+  { "nvzone/volt" },
+  { "nvzone/menu" },
+  {
+    "nvzone/minty",
+    cmd = { "Shades", "Huefy" },
+  },
 }
