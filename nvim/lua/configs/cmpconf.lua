@@ -23,10 +23,10 @@ local options = {
     ["<C-Space>"] = cmp.mapping.complete(), -- Trigger completion
     ["<C-e>"] = cmp.mapping.close(), -- Close completion menu
 
-    -- ["<CR>"] = cmp.mapping.confirm {
-    --   behavior = cmp.ConfirmBehavior.Insert,
-    --   select = true,
-    -- },
+    ["<CR>"] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Insert,
+      select = true,
+    },
 
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -48,25 +48,25 @@ local options = {
       end
     end, { "i", "s" }),
 
-    ["<CR>"] = cmp.mapping {
-      i = function(fallback)
-        if cmp.visible() and cmp.get_active_entry() then
-          cmp.confirm { behavior = cmp.ConfirmBehavior.Insert, select = false }
-        elseif luasnip.expandable() then
-          luasnip.expand() -- Expand snippet using luasnip
-        else
-          fallback()
-        end
-      end,
-      s = cmp.mapping.confirm { select = true },
-      c = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Insert, select = true },
-    },
+    -- ["<CR>"] = cmp.mapping {
+    --  i = function(fallback)
+    --     if cmp.visible() and cmp.get_active_entry() then
+    --       cmp.confirm { behavior = cmp.ConfirmBehavior.Replace, select = false }
+    --     else
+    --       fallback()
+    --     end
+    --   end,
+    --   s = cmp.mapping.confirm { select = true },
+    --   c = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Replace, select = true },
+    -- },
   },
 
   sources = {
-    { name = "nvim_lsp" }, -- Source from LSP
-    { name = "luasnip" }, -- Source for snippets using luasnip
-    { name = "buffer" }, -- Source from current buffer
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "nvim_lua" },
+    { name = "path" },
   },
 }
 
