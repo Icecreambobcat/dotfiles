@@ -110,15 +110,29 @@ return {
   {
     "hrsh7th/nvim-cmp",
     event = { "InsertEnter", "CmdlineEnter" },
-    opts = {
-      -- enabled = function()
-      --   return (vim.bo.ft ~= "markdown")
-      -- end,
-      -- Rest of your plugin spec
-      config = function()
-        require "configs.ncmp"
-      end,
-    },
+    opts = function()
+      return require "configs.cmpconf"
+    end,
+    config = function(_, opts)
+      local cmp = require "cmp"
+      cmp.setup.cmdline("/", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "buffer" },
+        },
+      })
+
+      -- `:` cmdline setup
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = "path" },
+        }, {
+          { name = "cmdline" },
+        }),
+      })
+      require("cmp").setup(opts)
+    end,
   },
   {
     "L3MON4D3/LuaSnip",
@@ -205,7 +219,7 @@ return {
       -- add any options here
       lsp = {
         signature = {
-          enable = false,
+          enable = true,
         },
       },
     },
@@ -235,7 +249,7 @@ return {
             ["cmp.entry.get_documentation"] = true,
           },
           hover = { enabled = false }, -- <-- HERE!
-          signature = { enabled = false }, -- <-- HERE!
+          signature = { enabled = true }, -- <-- HERE!
         },
         -- you can enable a preset for easier configuration
         presets = {
