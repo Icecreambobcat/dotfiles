@@ -101,7 +101,7 @@ local options = {
 
   cheatsheet = {
     theme = "grid", -- simple/grid
-    excluded_groups = { "terminal (t)", "autopairs", "Nvim", "Opens" }, -- can add group name or with mode
+    -- excluded_groups = { "terminal (t)", "autopairs", "Nvim", "Opens" }, -- can add group name or with mode
   },
 
   mason = { pkgs = {} },
