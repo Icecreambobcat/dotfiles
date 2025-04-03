@@ -80,6 +80,13 @@ return {
       "hrsh7th/nvim-cmp",
     },
     opts = {
+      workspace_root = {
+        use_lsp = true,
+        find_root = nil,
+        paths = {
+          ".git",
+        },
+      },
       -- Optionally disable cmp source if using virtual text only
       enable_cmp_source = true,
       enable_chat = true,

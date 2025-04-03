@@ -4,6 +4,13 @@ alt - j : yabai -m window --focus south || yabai -m display --focus south
 alt - k : yabai -m window --focus north || yabai -m display --focus north
 alt - l : yabai -m window --focus east  || yabai -m display --focus east
 
+# Cycle all windows on space backwards by coordinate (excluding windows where "scratchpad" is a non-empty string)
+alt - m : yabai -m window --focus "$(yabai -m query --windows --space | jq -re "del(.[] | select(.scratchpad | type == \"string\" and length > 0)) | [sort_by(.id, .frame) | reverse | .[] | select(.role == \"AXWindow\" and .subrole == \"AXStandardWindow\") | .id] | nth(index($(yabai -m query --windows --window | jq -re ".id")) - 1)")"
+
+# Cycle all windows on space forwards by coordinate (excluding windows where "scratchpad" is a non-empty string)
+alt - n : yabai -m window --focus "$(yabai -m query --windows --space | jq -re "del(.[] | select(.scratchpad | type == \"string\" and length > 0)) | [sort_by(.id, .frame) | .[] | select(.role == \"AXWindow\" and .subrole == \"AXStandardWindow\") | .id] | nth(index($(yabai -m query --windows --window | jq -re ".id")) - 1)")"
+
+
 # Move to the next space if the last space is not focused
 alt - 0x29 : info=$(yabai -m query --spaces --display) && \
           last=$(echo $info | jq '.[-1]."has-focus"') && \
