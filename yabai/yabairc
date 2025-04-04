@@ -3,8 +3,7 @@
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
-yabai -m config external_bar               all:0:0       \
-                mouse_follows_focus        off            \
+yabai -m config mouse_follows_focus        off            \
                 focus_follows_mouse        off            \
                 window_zoom_persist        off            \
                 window_placement           second_child   \
@@ -26,7 +25,7 @@ yabai -m config external_bar               all:0:0       \
                 bottom_padding             8              \
                 left_padding               8              \
                 right_padding              8              \
-                window_gap                 8              \
+                window_gap                 10             \
                 external_bar all:42:0
 
 # Exclude problematic apps from being managed:
