@@ -11,13 +11,7 @@ capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 -- LSP servers with default config
 local servers = { "html", "cssls", "pyright", "clangd", "texlab", "bashls" }
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
-  }
-end
+vim.lsp.enable(servers)
 
 -- Specific LSP configurations
 -- Typescript (tsserver)
