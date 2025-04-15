@@ -107,6 +107,15 @@ autocmd("VimLeavePre", {
   command = ":silent !kitty @ set-spacing padding=20 margin=10",
 })
 
+autocmd("BufDelete", {
+  callback = function()
+    local bufs = vim.t.bufs
+    if #bufs == 1 and vim.api.nvim_buf_get_name(bufs[1]) == "" then
+      require("snacks").dashboard()
+    end
+  end,
+})
+
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
@@ -143,6 +152,5 @@ hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
   vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
   vim.api.nvim_set_hl(0, "CurrentScope", { fg = "#FFFFFF" })
 end)
-
 
 require("ibl").setup { indent = { highlight = highlight }, scope = { highlight = CurrentScope } }

@@ -83,12 +83,12 @@ end, { desc = "terminal toggle floating term" })
 
 -- Keyboard users
 map("n", "<C-t>", function()
-  require("menu").open("default")
+  require("menu").open "default"
 end, {})
 
 -- mouse users + nvimtree users!
 map({ "n", "v" }, "<RightMouse>", function()
-  require('menu.utils').delete_old_menus()
+  require("menu.utils").delete_old_menus()
 
   vim.cmd.exec '"normal! \\<RightMouse>"'
 
@@ -98,3 +98,8 @@ map({ "n", "v" }, "<RightMouse>", function()
 
   require("menu").open(options, { mouse = true })
 end, {})
+
+vim.keymap.del("n", "grn")
+vim.keymap.del("n", "gri")
+vim.keymap.del("n", "grr")
+vim.keymap.del({ "n", "v" }, "gra")
