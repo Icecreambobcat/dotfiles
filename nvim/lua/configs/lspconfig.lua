@@ -2,6 +2,7 @@
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
+require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 local cmp_nvim_lsp = require "cmp_nvim_lsp"
