@@ -69,6 +69,60 @@ return {
       require "configs.treesitter"
     end,
   },
+  {
+    "zbirenbaum/copilot.lua",
+    opts = {
+      panel = {
+        enabled = true,
+        auto_refresh = true,
+        keymap = {
+          jump_prev = "[[",
+          jump_next = "]]",
+          accept = "<CR>",
+          refresh = "gr",
+          open = "<M-CR>",
+        },
+        layout = {
+          position = "right", -- | top | left | bottom | horizontal | vertical
+          ratio = 0.4,
+        },
+      },
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        hide_during_completion = true,
+        debounce = 75,
+        trigger_on_accept = true,
+        keymap = {
+          accept = "<C-/>",
+          accept_word = false,
+          accept_line = false,
+          next = "<C-.>",
+          prev = "<C-,>",
+          dismiss = "<C-x>",
+        },
+      },
+      filetypes = {
+        yaml = false,
+        markdown = false,
+        help = false,
+        gitcommit = false,
+        gitrebase = false,
+        hgcommit = false,
+        svn = false,
+        cvs = false,
+        ["."] = false,
+      },
+      copilot_node_command = "node", -- Node.js version must be > 20
+      workspace_folders = {},
+      copilot_model = "", -- Current LSP default is gpt-35-turbo, supports gpt-4o-copilot
+      server = {
+        type = "nodejs", -- "nodejs" | "binary"
+        custom_server_filepath = nil,
+      },
+      server_opts_overrides = {},
+    },
+  },
   -- {
   --   "Exafunction/windsurf.nvim",
   --   event = { "InsertEnter" },
@@ -132,30 +186,30 @@ return {
   --     }
   --   end,
   -- },
-  {
-    "Exafunction/windsurf.vim",
-    event = { "InsertEnter" },
-    config = function()
-      vim.keymap.set("i", "<C-/>", function()
-        return vim.fn["codeium#Accept"]()
-      end, { expr = true, silent = true })
-      vim.keymap.set("i", "<C-.>", function()
-        return vim.fn["codeium#CycleCompletions"](1)
-      end, { expr = true, silent = true })
-      vim.keymap.set("i", "<C-,>", function()
-        return vim.fn["codeium#CycleCompletions"](-1)
-      end, { expr = true, silent = true })
-      vim.keymap.set("i", "<C-x>", function()
-        return vim.fn["codeium#Clear"]()
-      end, { expr = true, silent = true })
-      vim.keymap.set("i", "<C-;>", function()
-        return vim.fn["codeium#Complete"]()
-      end, { expr = true, silent = true })
-      vim.keymap.set({ "n", "i" }, "<M-CR>", function()
-        return vim.fn["codeium#Chat"]()
-      end, { expr = true, silent = true })
-    end,
-  },
+  -- {
+  --   "Exafunction/windsurf.vim",
+  --   event = { "InsertEnter" },
+  --   config = function()
+  --     vim.keymap.set("i", "<C-/>", function()
+  --       return vim.fn["codeium#Accept"]()
+  --     end, { expr = true, silent = true })
+  --     vim.keymap.set("i", "<C-.>", function()
+  --       return vim.fn["codeium#CycleCompletions"](1)
+  --     end, { expr = true, silent = true })
+  --     vim.keymap.set("i", "<C-,>", function()
+  --       return vim.fn["codeium#CycleCompletions"](-1)
+  --     end, { expr = true, silent = true })
+  --     vim.keymap.set("i", "<C-x>", function()
+  --       return vim.fn["codeium#Clear"]()
+  --     end, { expr = true, silent = true })
+  --     vim.keymap.set("i", "<C-;>", function()
+  --       return vim.fn["codeium#Complete"]()
+  --     end, { expr = true, silent = true })
+  --     vim.keymap.set({ "n", "i" }, "<M-CR>", function()
+  --       return vim.fn["codeium#Chat"]()
+  --     end, { expr = true, silent = true })
+  --   end,
+  -- },
   {
     "nvim-telescope/telescope.nvim",
     lazy = false,
