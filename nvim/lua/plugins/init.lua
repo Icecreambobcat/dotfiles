@@ -133,7 +133,7 @@ return {
   --   end,
   -- },
   {
-    "Exafunction/codeium.vim",
+    "Exafunction/windsurf.vim",
     event = { "InsertEnter" },
     config = function()
       vim.keymap.set("i", "<C-/>", function()
