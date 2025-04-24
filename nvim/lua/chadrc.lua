@@ -7,7 +7,7 @@ local options = {
       Comment = { italic = true },
       ["@comment"] = { italic = true },
     },
-    integrations = {},
+    integrations = { "dap", "trouble" },
     changed_themes = {},
     transparency = true,
   },
