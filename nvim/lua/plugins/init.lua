@@ -279,20 +279,20 @@ return {
         end,
         desc = "Diff Index",
       },
-      -- {
-      --   "<leader>dm",
-      --   function()
-      --     local function toggle_diffview(cmd)
-      --       if next(require("diffview.lib").views) == nil then
-      --         vim.cmd(cmd)
-      --       else
-      --         vim.cmd "DiffviewClose"
-      --       end
-      --     end
-      --     toggle_diffview "DiffviewOpen master..HEAD"
-      --   end,
-      --   desc = "Diff master",
-      -- },
+      {
+        "<leader>dm",
+        function()
+          local function toggle_diffview(cmd)
+            if next(require("diffview.lib").views) == nil then
+              vim.cmd(cmd)
+            else
+              vim.cmd "DiffviewClose"
+            end
+          end
+          toggle_diffview "DiffviewOpen origin/main...HEAD"
+        end,
+        desc = "Diff master",
+      },
       {
         "<leader>df",
         function()

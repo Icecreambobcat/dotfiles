@@ -91,7 +91,7 @@ local autocmd = vim.api.nvim_create_autocmd
 autocmd({ "BufEnter", "BufWinEnter", "FileType" }, {
   callback = function()
     local current_lang = vim.bo.filetype
-    if current_lang == "tex" then
+    if current_lang == "tex" or current_lang == "md" then
       vim.o.conceallevel = 2
     else
       vim.o.conceallevel = 0
