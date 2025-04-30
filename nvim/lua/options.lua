@@ -16,7 +16,7 @@ vim.fn.sign_define("DapBreakpoint", { text = "🔴", texthl = "", linehl = "", n
 vim.fn.sign_define("DapStopped", { text = "🟢", texthl = "", linehl = "", numhl = "" })
 
 vim.diagnostic.config {
-  -- virtual_text = true,
+  virtual_text = true,
   virtual_lines = {
     current_line = true,
   },

@@ -4,26 +4,25 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require "lspconfig"
+-- local lspconfig = require "lspconfig"
 local cmp_nvim_lsp = require "cmp_nvim_lsp"
 
 -- Extend capabilities with nvim-cmp support
 capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 -- LSP servers with default config
-local servers = { "html", "cssls", "pyright", "clangd", "texlab", "bashls" }
-vim.lsp.enable(servers)
+local servers = { "html", "cssls", "pyright", "clangd", "texlab", "bashls", "ltex", "markdown_oxide", "ts_ls" }
 
 -- Specific LSP configurations
 -- Typescript (tsserver)
-lspconfig.ts_ls.setup {
+vim.lsp.config("ts_ls", {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
-}
+})
 
 -- ltex
-lspconfig.ltex.setup {
+vim.lsp.config("ltex", {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
@@ -34,10 +33,12 @@ lspconfig.ltex.setup {
       language = "en-AU",
     },
   },
-}
+})
 
 -- Markdown with additional capabilities
-lspconfig.markdown_oxide.setup {
+vim.lsp.config("markdown_oxide", {
+  on_attach = on_attach,
+  on_init = on_init,
   capabilities = vim.tbl_deep_extend("force", capabilities, {
     workspace = {
       didChangeWatchedFiles = {
@@ -45,6 +46,6 @@ lspconfig.markdown_oxide.setup {
       },
     },
   }),
-  on_attach = on_attach,
-  on_init = on_init,
-}
+})
+
+vim.lsp.enable(servers)

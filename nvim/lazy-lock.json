@@ -12,7 +12,6 @@
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
   "compiler.nvim": { "branch": "main", "commit": "eb7f82bb8f9e722dd194f638e67ec53c12ce5ac5" },
   "conform.nvim": { "branch": "master", "commit": "372fc521f8421b7830ea6db4d6ea3bae1c77548c" },
-  "copilot.lua": { "branch": "master", "commit": "a5c390f8d8e85b501b22dcb2f30e0cbbd69d5ff0" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
   "dressing.nvim": { "branch": "master", "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639" },
   "flash.nvim": { "branch": "main", "commit": "3c942666f115e2811e959eabbdd361a025db8b63" },
@@ -52,7 +51,7 @@
   "overseer.nvim": { "branch": "master", "commit": "6271cab7ccc4ca840faa93f54440ffae3a3918bd" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "presence.nvim": { "branch": "main", "commit": "87c857a56b7703f976d3a5ef15967d80508df6e6" },
-  "render-markdown": { "branch": "main", "commit": "7f81e9dcc15504c044f20df39d28a590cd5c6ca5" },
+  "render-markdown": { "branch": "main", "commit": "bd5657594bf1a96b04f900c87e8d74226a54d832" },
   "smear-cursor.nvim": { "branch": "main", "commit": "8820b313e49a018c7d56fc309c51363c0e9ae653" },
   "snacks.nvim": { "branch": "main", "commit": "bc0630e43be5699bb94dadc302c0d21615421d93" },
   "spring-boot.nvim": { "branch": "main", "commit": "218c0c26c14d99feca778e4d13f5ec3e8b1b60f0" },
@@ -62,5 +61,6 @@
   "ui": { "branch": "v3.0", "commit": "4466c87073c811c22b14215ba8a0cfc7d1b8b688" },
   "vimtex": { "branch": "master", "commit": "4fbf861dbe91f0ea6cb0adedcdf3e6551fe395da" },
   "volt": { "branch": "main", "commit": "c45d5f48da8e802e608b5c6da471ca4d84276dfb" },
-  "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" }
+  "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" },
+  "windsurf.nvim": { "branch": "main", "commit": "6e4a661a2d701ff615872ec5a30025a329419d5f" }
 }

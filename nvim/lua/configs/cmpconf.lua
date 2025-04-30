@@ -70,7 +70,7 @@ local options = {
     { name = "nvim_lsp_signature_help" },
     { name = "calc" },
     { name = "rg" },
-    -- { name = "codeium" },
+    { name = "codeium" },
     { name = "vimtex" },
   },
 }

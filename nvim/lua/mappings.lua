@@ -98,8 +98,3 @@ map({ "n", "v" }, "<RightMouse>", function()
 
   require("menu").open(options, { mouse = true })
 end, {})
-
-vim.keymap.del("n", "grn")
-vim.keymap.del("n", "gri")
-vim.keymap.del("n", "grr")
-vim.keymap.del({ "n", "v" }, "gra")
