@@ -209,29 +209,28 @@ return {
         -- make sure to set opts so that lazy.nvim calls blink.compat's setup
         opts = {},
       },
+      { "L3MON4D3/LuaSnip", version = "v2.*" },
     },
     opts = {
       keymap = {
         ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
         ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
       },
-    },
-    sources = {
-      default = {
-        "lsp",
-        "buffer",
-        "snippets",
-        "path",
+      sources = {
+        default = {
+          "lsp",
+          "buffer",
+          "snippets",
+          "path",
+        },
+        providers = {},
       },
-      providers = {},
+      snippets = {
+        jump = function(direction)
+          require("luasnip").jump(direction)
+        end,
+      },
     },
-  },
-  {
-    "L3MON4D3/LuaSnip",
-    -- follow latest release.
-    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-    -- install jsregexp (optional!).
-    build = "make install_jsregexp",
   },
   {
     "sindrets/diffview.nvim", -- optional - Diff integration
