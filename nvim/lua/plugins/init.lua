@@ -201,23 +201,14 @@ return {
   },
   { import = "nvchad.blink.lazyspec" },
   {
-    "saghen/blink.compat",
-    -- use the latest release, via version = '*', if you also use the latest release for blink.cmp
-    version = "*",
-    -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
-    lazy = true,
-    -- make sure to set opts so that lazy.nvim calls blink.compat's setup
-    opts = {},
-  },
-  {
     "saghen/blink.cmp",
     dependencies = {
-      "lukas-reineke/cmp-rg",
-      "micangl/cmp-vimtex",
-      "hrsh7th/cmp-calc",
-      "micangl/cmp-vimtex",
-      "cmp-nvim-lua",
-      "Exafunction/windsurf.nvim",
+      {
+        "saghen/blink.compat",
+        version = "*",
+        -- make sure to set opts so that lazy.nvim calls blink.compat's setup
+        opts = {},
+      },
     },
     opts = {
       keymap = {
@@ -231,37 +222,8 @@ return {
         "buffer",
         "snippets",
         "path",
-        "rg",
-        "codeium",
-        "vimtex",
-        "nvim_lua",
-        "nvim_lsp_signature_help",
-        "calc",
-        "codeium",
       },
-      providers = {
-        codeium = { name = "Codeium", module = "codeium.blink", async = true },
-        rg = {
-          name = "rg",
-          module = "blink.compat.source",
-        },
-        vimtex = {
-          name = "vimtex",
-          module = "blink.compat.source",
-        },
-        calc = {
-          name = "calc",
-          module = "blink.compat.source",
-        },
-        nvim_lua = {
-          name = "nvim_lua",
-          module = "blink.compat.source",
-        },
-        nvim_lsp_signature_help = {
-          name = "nvim_lsp_signature_help",
-          module = "blink.compat.source",
-        },
-      },
+      providers = {},
     },
   },
   {
