@@ -332,7 +332,7 @@ return {
             -- override cmp documentation with Noice (needs the other options to work)
             ["cmp.entry.get_documentation"] = true,
           },
-          hover = { enabled = false }, -- <-- HERE!
+          hover = { enabled = true }, -- <-- HERE!
           signature = {
             enabled = true,
             auto_open = {
