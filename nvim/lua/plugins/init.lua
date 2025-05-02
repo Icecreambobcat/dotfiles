@@ -202,6 +202,9 @@ return {
   { import = "nvchad.blink.lazyspec" },
   {
     "saghen/blink.cmp",
+    priority = 1000,
+    version = "*",
+      -- build = 'cargo build --release',
     dependencies = {
       {
         "saghen/blink.compat",
@@ -210,6 +213,7 @@ return {
         opts = {},
       },
       { "L3MON4D3/LuaSnip", version = "v2.*" },
+      { "Exafunction/windsurf.nvim"}
     },
     opts = {
       keymap = {
@@ -222,8 +226,11 @@ return {
           "buffer",
           "snippets",
           "path",
+          "codeium",
         },
-        providers = {},
+        providers = {
+           codeium = { name = 'Codeium', module = 'codeium.blink', async = true },
+        },
       },
       snippets = {
         jump = function(direction)
