@@ -88,7 +88,7 @@ return {
           },
         },
         -- Optionally disable cmp source if using virtual text only
-        enable_cmp_source = true,
+        enable_cmp_source = false,
         enable_chat = true,
         virtual_text = {
           enabled = true,
@@ -226,10 +226,10 @@ return {
           "buffer",
           "snippets",
           "path",
-          "codeium",
+          -- "codeium",
         },
         providers = {
-          codeium = { name = "Codeium", module = "codeium.blink", async = true },
+          -- codeium = { name = "Codeium", module = "codeium.blink", async = true },
         },
       },
       snippets = {
