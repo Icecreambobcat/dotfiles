@@ -804,4 +804,9 @@ return {
     "nvzone/minty",
     cmd = { "Shades", "Huefy" },
   },
+  {
+    "atiladefreitas/dooing",
+    event = "VeryLazy",
+    opts = {},
+  },
 }
