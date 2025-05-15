@@ -669,6 +669,11 @@ return {
         "<cmd>Trouble qflist toggle<cr>",
         desc = "Quickfix List (Trouble)",
       },
+      {
+        "<leader>tT",
+        "<cmd>Trouble todo filter = {tag = {TODO,FIX,FIXME}}<cr>",
+        desc = "Quickfix List (Trouble)",
+      },
     },
   },
   {
@@ -836,7 +841,7 @@ return {
         desc = "Previous todo comment",
       },
       {
-        "<leader>t",
+        "<leader>tt",
         "<cmd>TodoTelescope<cr>",
         desc = "Todo telescope",
       },
