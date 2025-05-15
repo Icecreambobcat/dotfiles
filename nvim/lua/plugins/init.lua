@@ -810,11 +810,11 @@ return {
     "nvzone/minty",
     cmd = { "Shades", "Huefy" },
   },
-  {
-    "atiladefreitas/dooing",
-    event = "VeryLazy",
-    opts = {},
-  },
+  -- {
+  --   "atiladefreitas/dooing",
+  --   event = "VeryLazy",
+  --   opts = {},
+  -- },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -834,6 +834,12 @@ return {
           require("todo-comments").jump_prev()
         end,
         desc = "Previous todo comment",
+      },
+      {
+        "<leader>t",
+        mode = { "n" },
+        "<cmd>TodoTelescope<cr>",
+        desc = "Toggle todo comments",
       },
     },
   },
