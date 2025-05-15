@@ -837,9 +837,8 @@ return {
       },
       {
         "<leader>t",
-        mode = { "n" },
         "<cmd>TodoTelescope<cr>",
-        desc = "Toggle todo comments",
+        desc = "Todo telescope",
       },
     },
   },
