@@ -741,12 +741,47 @@ return {
     },
   },
   {
-    "andweeb/presence.nvim",
+    "vyfor/cord.nvim",
     event = "VeryLazy",
+    build = ":Cord update",
     opts = {
-      neovim_image_text = "I'm literally better than you",
+      enabled = true,
+      editor = {
+        client = "neovim",
+        tooltip = "Little Wei never saw this coming",
+        icon = "https://cdn.discordapp.com/emojis/1229467887652307077.gif?size=64",
+      },
+      display = {
+        theme = "atom",
+        flavor = "accent",
+      },
+      text = {},
+      buttons = {
+        {
+          label = function(opts)
+            return opts.repo_url and "View Repository"
+          end,
+          url = function(opts)
+            return opts.repo_url
+          end,
+        },
+        {
+          label = "ricers click here",
+          url = "https://complex-analysis.com/",
+        },
+      },
+      idle = {
+        icon = "https://cdn.discordapp.com/emojis/667391296452952084.gif?size=64",
+      },
     },
   },
+  -- {
+  --   "andweeb/presence.nvim",
+  --   event = "VeryLazy",
+  --   opts = {
+  --     neovim_image_text = "I'm literally better than you",
+  --   },
+  -- },
   {
     "sphamba/smear-cursor.nvim",
     opts = {
