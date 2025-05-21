@@ -758,16 +758,16 @@ return {
       text = {},
       buttons = {
         {
+          label = "ricers click here",
+          url = "https://complex-analysis.com/",
+        },
+        {
           label = function(opts)
             return opts.repo_url and "View Repository"
           end,
           url = function(opts)
             return opts.repo_url
           end,
-        },
-        {
-          label = "ricers click here",
-          url = "https://complex-analysis.com/",
         },
       },
       idle = {
