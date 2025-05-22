@@ -8,5 +8,6 @@ require("focus").setup {
       enable = true,
       list = "+1,+2",
     },
+    cursorline = false,
   },
 }
