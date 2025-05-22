@@ -213,7 +213,7 @@ return {
       --   opts = {},
       -- },
       { "L3MON4D3/LuaSnip", version = "v2.*" },
-      { "Exafunction/windsurf.nvim" },
+      -- { "Exafunction/windsurf.nvim" },
     },
     opts = {
       keymap = {
@@ -232,11 +232,11 @@ return {
           -- codeium = { name = "Codeium", module = "codeium.blink", async = true },
         },
       },
-      snippets = {
-        jump = function(direction)
-          require("luasnip").jump(direction)
-        end,
-      },
+      -- snippets = {
+      --   jump = function(direction)
+      --     require("luasnip").jump(direction)
+      --   end,
+      -- },
     },
   },
   {
