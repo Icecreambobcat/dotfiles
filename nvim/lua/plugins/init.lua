@@ -216,11 +216,6 @@ return {
       -- { "Exafunction/windsurf.nvim" },
     },
     opts = {
-      enabled = function()
-        return not vim.tbl_contains({
-          "NvimTree",
-        }, vim.bo.filetype) and vim.bo.buftype ~= "prompt" and vim.b.completion ~= false
-      end,
       keymap = {
         ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
         ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
