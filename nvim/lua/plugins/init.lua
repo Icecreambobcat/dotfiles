@@ -733,6 +733,10 @@ return {
       end, desc = "Treesitter Search" },
       { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     },
+    config = function(_, opts)
+      require("flash").setup(opts)
+      require("flash").toggle(true)
+    end,
   },
   {
     "folke/which-key.nvim",
