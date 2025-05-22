@@ -237,11 +237,11 @@ return {
           -- codeium = { name = "Codeium", module = "codeium.blink", async = true },
         },
       },
-      -- snippets = {
-      --   jump = function(direction)
-      --     require("luasnip").jump(direction)
-      --   end,
-      -- },
+      snippets = {
+        jump = function(direction)
+          require("luasnip").jump(direction)
+        end,
+      },
     },
   },
   {
