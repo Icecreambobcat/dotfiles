@@ -776,7 +776,7 @@ return {
       },
       idle = {
         icon = "https://cdn.discordapp.com/emojis/661791898348027914.gif?size=64",
-        tooltop = "Procrastinating...",
+        tooltip = "Procrastinating...",
       },
     },
   },
