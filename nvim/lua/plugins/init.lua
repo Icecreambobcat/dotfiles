@@ -752,8 +752,8 @@ return {
       enabled = true,
       editor = {
         client = "neovim",
-        tooltip = "Little Wei never saw this coming",
-        icon = "https://cdn.discordapp.com/emojis/1229467887652307077.gif?size=64",
+        tooltip = "Why would you do this",
+        icon = "https://cdn.discordapp.com/emojis/1375420194918367375.gif?size=64",
       },
       display = {
         theme = "atom",
@@ -775,7 +775,8 @@ return {
         },
       },
       idle = {
-        icon = "https://cdn.discordapp.com/emojis/667391296452952084.gif?size=64",
+        icon = "https://cdn.discordapp.com/emojis/661791898348027914.gif?size=64",
+        tooltop = "Procrastinating...",
       },
     },
   },
