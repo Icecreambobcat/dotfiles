@@ -122,21 +122,20 @@ ctrl + alt - l : yabai -m window --resize right:100:0 || yabai -m window --resiz
 # misc
 ## Stacks (shift + ctrl - ...)
 # Add the active window to the window or stack to the {direction}: shift + ctrl - {j, k, l, ö}
-shift + ctrl - h    : yabai -m window  west --stack $(yabai -m query --windows --window | jq -r '.id')
-shift + ctrl - j    : yabai -m window south --stack $(yabai -m query --windows --window | jq -r '.id')
-shift + ctrl - k    : yabai -m window north --stack $(yabai -m query --windows --window | jq -r '.id')
+shift + ctrl - h : yabai -m window  west --stack $(yabai -m query --windows --window | jq -r '.id')
+shift + ctrl - j : yabai -m window south --stack $(yabai -m query --windows --window | jq -r '.id')
+shift + ctrl - k : yabai -m window north --stack $(yabai -m query --windows --window | jq -r '.id')
 shift + ctrl - l : yabai -m window  east --stack $(yabai -m query --windows --window | jq -r '.id')
 
 shift + ctrl - n : yabai -m window --focus stack.next
 shift + ctrl - p : yabai -m window --focus stack.prev
 
 ## Insertion (shift + ctrl + lalt - ...)
-# Set insertion point for focused container: shift + ctrl + lalt - {j, k, l, ö, s}
 shift + ctrl + alt - h : yabai -m window --insert west
 shift + ctrl + alt - j : yabai -m window --insert south
 shift + ctrl + alt - k : yabai -m window --insert north
 shift + ctrl + alt - l : yabai -m window --insert east
-shift + ctrl + alt - s : yabai -m window --insert stack
+shift + ctrl + alt - 0x29 : yabai -m window --insert stack
 
 # New window in hor./ vert. splits for all applications with yabai
 alt - a : yabai -m window --insert east;  skhd -k "cmd - n"
