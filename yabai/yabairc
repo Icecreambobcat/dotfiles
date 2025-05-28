@@ -26,7 +26,7 @@ yabai -m config mouse_follows_focus        off            \
                 left_padding               8              \
                 right_padding              8              \
                 window_gap                 10             \
-                external_bar all:42:0
+                external_bar all:46:0
 
 # Exclude problematic apps from being managed:
 # yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor)$" manage=off
