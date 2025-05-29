@@ -3,7 +3,7 @@
   "NvChad": { "branch": "v2.5", "commit": "d4e5b8a10f01c06e18d2a8bb66761a3596562a67" },
   "auto-session": { "branch": "main", "commit": "00334ee24b9a05001ad50221c8daffbeedaa0842" },
   "base46": { "branch": "v3.0", "commit": "b4cb646df33e9140271211671256dd148e127595" },
-  "blink.cmp": { "branch": "main", "commit": "7c76cf55214f838845444637dfdafd2d5f227484" },
+  "blink.cmp": { "branch": "main", "commit": "e7cdf1ac0be3acfce2a718bc921768ac747db5d9" },
   "compiler.nvim": { "branch": "main", "commit": "eb7f82bb8f9e722dd194f638e67ec53c12ce5ac5" },
   "conform.nvim": { "branch": "master", "commit": "6feb2f28f9a9385e401857b21eeac3c1b66dd628" },
   "cord.nvim": { "branch": "master", "commit": "13e72572f151d531c31822ce38c8a13cc1355328" },
