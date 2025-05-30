@@ -39,21 +39,21 @@ return {
         "clangd",
         "debugpy",
         "gh",
-        "google-java-format",
+        -- "google-java-format",
         "html-lsp",
-        "java-debug-adapter",
-        "java-language-server",
-        "java-test",
-        "jdtls",
+        -- "java-debug-adapter",
+        -- "java-language-server",
+        -- "java-test",
+        -- "jdtls",
         "latexindent",
         "lombok-nightly",
         "lua-language-server",
         "markdown-oxide",
         "markdownlint",
-        "openjdk-17",
+        -- "openjdk-17",
         "prettier",
         "pyright",
-        "spring-boot-tools",
+        -- "spring-boot-tools",
         "stylua",
         "texlab",
         "ltex-ls",
@@ -504,73 +504,73 @@ return {
       vim.api.nvim_set_hl(0, "MultiCursorDisabledVisual", { link = "Visual" })
     end,
   },
-  {
-    "nvim-java/nvim-java",
-    -- lazy = false,
-    ft = { "java" },
-    dependencies = {
-      "nvim-java/lua-async-await",
-      "nvim-java/nvim-java-core",
-      "nvim-java/nvim-java-test",
-      "nvim-java/nvim-java-dap",
-      "MunifTanjim/nui.nvim",
-      "neovim/nvim-lspconfig",
-      "mfussenegger/nvim-dap",
-      {
-        "williamboman/mason.nvim",
-        opts = {
-          registries = {
-            "github:nvim-java/mason-registry",
-            "github:mason-org/mason-registry",
-          },
-        },
-      },
-    },
-    config = function()
-      require("java").setup {
-        root_markers = {
-          "settings.gradle",
-          "settings.gradle.kts",
-          "pom.xml",
-          "build.gradle",
-          "mvnw",
-          "gradlew",
-          "build.gradle",
-          "build.gradle.kts",
-          ".git",
-        },
-        java_test = {
-          enable = true,
-          -- enable = false,
-        },
-        java_debug_adapter = {
-          -- enable = true,
-          enable = false,
-        },
-        spring_boot_tools = {
-          -- enable = true,
-          enable = false,
-        },
-        jdk = {
-          auto_install = true,
-        },
-        notifications = {
-          dap = true,
-        },
-        verification = {
-          invalid_order = true,
-          duplicate_setup_calls = true,
-          invalid_mason_registry = true,
-        },
-      }
-      require("configs.lspconfig").jdtls.setup {
-        on_attach = require("nvchad.configs.lspconfig").on_attach,
-        capabilities = require("nvchad.configs.lspconfig").capabilities,
-        on_init = require("nvchad.configs.lspconfig").on_init,
-        filetypes = { "java" },
-      }
-    end,
-  },
+  -- {
+  --   "nvim-java/nvim-java",
+  --   -- lazy = false,
+  --   ft = { "java" },
+  --   dependencies = {
+  --     "nvim-java/lua-async-await",
+  --     "nvim-java/nvim-java-core",
+  --     "nvim-java/nvim-java-test",
+  --     "nvim-java/nvim-java-dap",
+  --     "MunifTanjim/nui.nvim",
+  --     "neovim/nvim-lspconfig",
+  --     "mfussenegger/nvim-dap",
+  --     {
+  --       "williamboman/mason.nvim",
+  --       opts = {
+  --         registries = {
+  --           "github:nvim-java/mason-registry",
+  --           "github:mason-org/mason-registry",
+  --         },
+  --       },
+  --     },
+  --   },
+  --   config = function()
+  --     require("java").setup {
+  --       root_markers = {
+  --         "settings.gradle",
+  --         "settings.gradle.kts",
+  --         "pom.xml",
+  --         "build.gradle",
+  --         "mvnw",
+  --         "gradlew",
+  --         "build.gradle",
+  --         "build.gradle.kts",
+  --         ".git",
+  --       },
+  --       java_test = {
+  --         enable = true,
+  --         -- enable = false,
+  --       },
+  --       java_debug_adapter = {
+  --         -- enable = true,
+  --         enable = false,
+  --       },
+  --       spring_boot_tools = {
+  --         -- enable = true,
+  --         enable = false,
+  --       },
+  --       jdk = {
+  --         auto_install = true,
+  --       },
+  --       notifications = {
+  --         dap = true,
+  --       },
+  --       verification = {
+  --         invalid_order = true,
+  --         duplicate_setup_calls = true,
+  --         invalid_mason_registry = true,
+  --       },
+  --     }
+  --     require("configs.lspconfig").jdtls.setup {
+  --       on_attach = require("nvchad.configs.lspconfig").on_attach,
+  --       capabilities = require("nvchad.configs.lspconfig").capabilities,
+  --       on_init = require("nvchad.configs.lspconfig").on_init,
+  --       filetypes = { "java" },
+  --     }
+  --   end,
+  -- },
   {
     "nvim-focus/focus.nvim",
     version = "*",
