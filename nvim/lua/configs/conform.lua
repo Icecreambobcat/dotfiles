@@ -9,7 +9,7 @@ local options = {
     latex = { "latexindent" },
     zsh = { "beautysh", timeout_ms = 2000 },
     tex = { "latexindent", timeout_ms = 2000 },
-    java = { "google-java-format", timeout_ms = 3500 },
+    -- java = { "google-java-format", timeout_ms = 3500 },
     json = { "prettier" },
     bib = { "bibtex-tidy" },
     yaml = { "prettier" },
