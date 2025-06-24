@@ -3,10 +3,10 @@ deps = []
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "1a419b2"
-hash = "c40e434318a8ceffd01842f8dfb2390e"
+rev = "d04a298"
+hash = "288a0dedd5d13b28605cf82c05326dcd"
 
 [[flavor.deps]]
 use = "BennyOe/tokyo-night"
-rev = "695dac6"
-hash = "a8f426ea0d9cb843b081d62ab01364c8"
+rev = "b3950bf"
+hash = "319ce574cdb2865baf4323db90456504"
