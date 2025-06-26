@@ -789,16 +789,16 @@ return {
   {
     "sphamba/smear-cursor.nvim",
     opts = {
-      cursor_color = "#0cfade",
-      stiffness = 0.3,
-      trailing_stiffness = 0.1,
+      -- cursor_color = "#0cfade",
+      cursor_color = "#ff8800",
+      stiffness = 0.8,
+      trailing_stiffness = 0.4,
       trailing_exponent = 5,
-      hide_target_hack = true,
       gamma = 1,
       slowdown_exponent = 0.1,
       max_length = 40,
       time_interval = 15,
-      smear_insert_mode = false,
+      damping = 0.8,
     },
     keys = {
       {
