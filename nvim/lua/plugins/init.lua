@@ -798,6 +798,7 @@ return {
       slowdown_exponent = 0.1,
       max_length = 40,
       time_interval = 15,
+      smear_insert_mode = false,
     },
     keys = {
       {
