@@ -816,14 +816,14 @@ return {
     },
     event = "VeryLazy",
   },
-  {
-    "karb94/neoscroll.nvim",
-    event = "VeryLazy",
-    opts = {
-      duration_multiplier = 0.65,
-      easing = "sine",
-    },
-  },
+  -- {
+  --   "karb94/neoscroll.nvim",
+  --   event = "VeryLazy",
+  --   opts = {
+  --     duration_multiplier = 0.65,
+  --     easing = "sine",
+  --   },
+  -- },
   {
     "echasnovski/mini.nvim",
     version = false,
