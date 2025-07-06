@@ -36,6 +36,14 @@ vim.lsp.config("ts_ls", {
 --   },
 -- })
 
+-- bashls
+vim.lsp.config("bashls", {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  filetypes = { "sh", "bash", "zsh" },
+})
+
 -- Markdown with additional capabilities
 vim.lsp.config("markdown_oxide", {
   on_attach = on_attach,
