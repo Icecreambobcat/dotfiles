@@ -780,13 +780,6 @@ return {
       },
     },
   },
-  -- {
-  --   "andweeb/presence.nvim",
-  --   event = "VeryLazy",
-  --   opts = {
-  --     neovim_image_text = "I'm literally better than you",
-  --   },
-  -- },
   {
     "sphamba/smear-cursor.nvim",
     opts = {
@@ -816,14 +809,14 @@ return {
     },
     event = "VeryLazy",
   },
-  -- {
-  --   "karb94/neoscroll.nvim",
-  --   event = "VeryLazy",
-  --   opts = {
-  --     duration_multiplier = 0.65,
-  --     easing = "sine",
-  --   },
-  -- },
+  {
+    "karb94/neoscroll.nvim",
+    event = "VeryLazy",
+    opts = {
+      duration_multiplier = 0.1,
+      easing = "cubic",
+    },
+  },
   {
     "echasnovski/mini.nvim",
     version = false,
@@ -868,11 +861,16 @@ return {
     "nvzone/minty",
     cmd = { "Shades", "Huefy" },
   },
-  -- {
-  --   "atiladefreitas/dooing",
-  --   event = "VeryLazy",
-  --   opts = {},
-  -- },
+  {
+    "atiladefreitas/dooing",
+    event = "VeryLazy",
+    opts = {
+      window = {
+        width = 144,
+        height = 48,
+      },
+    },
+  },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
