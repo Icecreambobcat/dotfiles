@@ -5,6 +5,8 @@ config.vimtex_mappings_prefix = "<leader>l"
 config.tex_flavor = "latex"
 config.vimtex_quickfix_mode = 2
 config.vimtex_syntax_enabled = 1
+-- config.vimtex_syntax_enabled = 0
+-- config.vimtex_syntax_conceal_disable = 1
 
 config.vimtex_syntax_conceal = {
   accents = 1,

@@ -7,9 +7,6 @@ treesitter.setup {
     disable = { "latex" },
     use_languagetree = true,
   },
-  -- ignore_install = {
-  --   "latex",
-  -- },
   ensure_installed = {
     "vim",
     "lua",
