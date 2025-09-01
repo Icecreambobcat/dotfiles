@@ -378,11 +378,10 @@ return {
   {
     "rmagatti/auto-session",
     lazy = false,
-
     keys = {
-      { "<leader>ss", mode = "n", "<cmd>SessionSave<cr>" },
-      { "<leader>fs", mode = "n", "<cmd>SessionSearch<cr>" },
-      { "<leader>sd", mode = "n", "<cmd>Autosession delete<cr>" },
+      { "<leader>ss", mode = "n", "<cmd>AutoSession save<cr>" },
+      { "<leader>fs", mode = "n", "<cmd>AutoSession search<cr>" },
+      { "<leader>sd", mode = "n", "<cmd>AutoSession deletePicker<cr>" },
     },
 
     opts = {
