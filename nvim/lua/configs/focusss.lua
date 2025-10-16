@@ -1,7 +1,7 @@
 require("focus").setup {
   commands = true,
   autoresize = {
-    enable = true,
+    enable = false,
   },
   ui = {
     colorcolumn = {
