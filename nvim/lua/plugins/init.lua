@@ -799,6 +799,7 @@ return {
       max_length = 40,
       time_interval = 15,
       damping = 0.8,
+      smear_to_cmd = false,
     },
     keys = {
       {
