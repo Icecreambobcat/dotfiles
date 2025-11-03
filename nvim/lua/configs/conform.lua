@@ -13,6 +13,7 @@ local options = {
     json = { "prettier" },
     bib = { "bibtex-tidy" },
     yaml = { "prettier" },
+    sql = { "pgformatter" },
   },
   -- format_on_save = {
   --   -- I recommend these options. See :help conform.format for details.
@@ -23,5 +24,4 @@ local options = {
 
 require("conform").setup(options)
 
-require("conform").formatters.latexindent = {
-}
+require("conform").formatters.latexindent = {}

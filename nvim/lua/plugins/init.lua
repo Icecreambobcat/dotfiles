@@ -216,9 +216,9 @@ return {
       -- { "Exafunction/windsurf.nvim" },
     },
     opts = {
-      -- enabled = function()
-      --   return not vim.tbl_contains({ "NvimTree" }, vim.bo.filetype)
-      -- end,
+      enabled = function()
+        return not vim.tbl_contains({ "DressingSelect", "DressingInput" }, vim.bo.filetype)
+      end,
       keymap = {
         ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
         ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
@@ -363,13 +363,13 @@ return {
       },
     },
   },
-  -- {
-  --   "stevearc/dressing.nvim",
-  --   lazy = false,
-  --   config = function()
-  --     require "configs.dressing"
-  --   end,
-  -- },
+  {
+    "stevearc/dressing.nvim",
+    lazy = false,
+    config = function()
+      require "configs.dressing"
+    end,
+  },
   {
     "lervag/vimtex",
     lazy = false, -- we don't want to lazy load VimTeX

@@ -11,7 +11,7 @@ require("nvchad.configs.lspconfig").defaults()
 -- capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 -- LSP servers with default config
-local servers = { "html", "cssls", "pyright", "clangd", "texlab", "bashls", "markdown_oxide", "ts_ls" }
+local servers = { "html", "cssls", "pyright", "clangd", "texlab", "bashls", "markdown_oxide", "ts_ls", "postgres_lsp" }
 -- local servers = { "html", "cssls", "pyright", "clangd", "texlab", "bashls", "ltex", "markdown_oxide", "ts_ls" }
 
 -- Specific LSP configurations
