@@ -85,8 +85,7 @@ for i = 1, 10, 1 do
 			space:set({ popup = { drawing = "toggle" } })
 		else
 			local op = (env.BUTTON == "right") and "--destroy" or "--focus"
-			sbar.exec("/usr/local/bin/yabai -m space " .. op .. " " .. env.SID)
-			-- sbar.exec("yabai -m space " .. op .. " " .. env.SID)
+			sbar.exec("yabai -m space " .. op .. " " .. env.SID)
 		end
 	end)
 
