@@ -114,3 +114,15 @@ end, { silent = true, expr = true })
 map("c", "<S-Enter>", function()
   require("noice").redirect(vim.fn.getcmdline())
 end, { desc = "Redirect Cmdline" })
+
+map({ "n", "i", "s" }, "<c-f>", function()
+  if not require("noice.lsp").scroll(4) then
+    return "<c-f>"
+  end
+end, { silent = true, expr = true })
+
+map({ "n", "i", "s" }, "<c-b>", function()
+  if not require("noice.lsp").scroll(-4) then
+    return "<c-b>"
+  end
+end, { silent = true, expr = true })
