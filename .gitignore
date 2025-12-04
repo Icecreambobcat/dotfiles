@@ -8,3 +8,4 @@ btop.log
 *.DS_Store
 github-copilot/apps.json
 ghidra
+wireshark
