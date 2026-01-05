@@ -1,0 +1,57 @@
+[https]
+skip = true
+
+[dns]
+cache = true
+
+[[policy.overrides]]
+match = {
+    domain = [
+        # Discord
+        "**.discord.*",
+        "**.discordapp.*",
+        "**.discordcdn.com",
+        "**.discordstatus.com",
+        "**.dis.gd",
+
+        # Youtube
+        "**.youtube.**",
+        "**.ggpht.*",
+        "**.googlevideo.com",
+        "**.wide-youtube.l.google.com",
+        "**.withyoutube.com",
+        "**.youtu.be",
+        "**.youtube-nocookie.com",
+        "**.youtube-ui.l.google.com",
+        "**.youtube.googleapis.com",
+        "**.youtubeeducation.com",
+        "**.youtubeembeddedplayer.googleapis.com",
+        "**.youtubefanfest.com",
+        "**.youtubegaming.com",
+        "**.youtubego.**",
+        "**.youtubei.googleapis.com",
+        "**.youtubekids.com",
+        "**.youtubemobilesupport.com",
+        "**.yt.be",
+        "**.ytimg.com",
+    ],
+}
+https = { fake-count = 7, disorder = true, split-mode = "chunk" }
+dns = { 
+    mode = "https", 
+    https-url = "https://cloudflare-dns.com/dns-query", 
+}
+
+[[policy.overrides]]
+match = {
+    domain = [
+        "localhost",
+    ],
+    addr = [
+        { cidr = "192.168.0.0/16", port = "all" },
+        { cidr = "172.16.0.0/12", port = "all" },
+        { cidr = "10.0.0.0/8", port = "all" },
+    ],
+}
+https = { skip = true }
+dns = { mode = "system" }
