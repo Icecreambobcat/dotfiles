@@ -195,8 +195,8 @@ return {
   {
     "saghen/blink.cmp",
     event = { "InsertEnter", "CmdlineEnter" },
-    -- version = false,
-    -- build = "cargo build --release",
+    version = false,
+    build = "cargo build --release",
     dependencies = {
       -- {
       --   "saghen/blink.compat",
