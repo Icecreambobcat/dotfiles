@@ -1,0 +1,16 @@
+# smart filter
+[[mgr.prepend_keymap]]
+on   = "F"
+run  = "plugin smart-filter"
+desc = "Smart filter"
+
+# Mount
+[[mgr.prepend_keymap]]
+on  = "M"
+run = "plugin mount"
+
+# chmod
+[[mgr.prepend_keymap]]
+on   = [ "c", "m" ]
+run  = "plugin chmod"
+desc = "Chmod on selected files"
