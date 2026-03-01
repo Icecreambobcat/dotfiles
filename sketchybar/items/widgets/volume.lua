@@ -141,7 +141,7 @@ local function volume_scroll(env)
   local delta = env.INFO.delta
   if not (env.INFO.modifier == "ctrl") then delta = delta * 10.0 end
 
-  sbar.exec('osascript -e "set volume output volume (output volume of (get volume settings) + ' .. delta .. ')"')
+  sbar.exec('osascript -e "set volume output volume (output volume of (get volume settings) - ' .. delta .. ')"')
 end
 
 volume_icon:subscribe("mouse.clicked", volume_toggle_details)
