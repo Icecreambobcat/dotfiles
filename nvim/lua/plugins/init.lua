@@ -312,7 +312,8 @@ return {
       --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
     },
-    event = "VeryLazy",
+    -- event = "VeryLazy",
+    lazy = false,
     opts = {
       routes = {
         {
