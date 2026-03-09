@@ -99,14 +99,6 @@ autocmd({ "BufEnter", "BufWinEnter", "FileType" }, {
   end,
 })
 
-autocmd("VimEnter", {
-  command = ":silent !kitty @ set-spacing padding=0 margin=0",
-})
-
-autocmd("VimLeavePre", {
-  command = ":silent !kitty @ set-spacing padding=20 margin=10",
-})
-
 -- autocmd("BufDelete", {
 --   callback = function()
 --     local bufs = vim.t.bufs
