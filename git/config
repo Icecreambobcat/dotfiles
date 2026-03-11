@@ -1,0 +1,26 @@
+[user]
+	signingkey = C6D1EF376F3387E7DAEDC924B76FAC874C523085
+	email = icekingrex123@gmail.com
+	name = Icecreambobcat
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
+[init]
+	defaultBranch = main
+[core]
+	excludesfile = /Users/icecreambobcat/.config/git/ignore
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+[difftool]
+    prompt = false
+[pager]
+    difftool = true
+[diff]
+    tool = difftastic
