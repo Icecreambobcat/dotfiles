@@ -91,7 +91,6 @@ alias um="unimatrix -c cyan -fa -s 95 -u '▁▂▃▄▅▆▇█' -l muuuuuuuu
 alias ummm="unimatrix -c cyan -fa -s 95 -u '▁▂▃▄▅▆▇█' -l mggggGGGGccccCCCCuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"
 alias sbr="sketchybar --reload"
 alias steam_thing="launchctl remove com.valvesoftware.steam.ipctool"
-alias gitignore="git-ignore -awu"
 
 t() { command tre "$@" -e nvim && source "/tmp/tre_aliases_$USER" 2>/dev/null; }
 
@@ -169,6 +168,17 @@ lg () {
     command lazygit "$@"
     unset DIFFTCTXFILE
     rm -f "$ctxfile"
+}
+
+gitnr () {
+    if [[ $1 == 'create' && 'git rev-parse --is-inside-work-tree >/dev/null 2>&1' ]]; then
+        shift
+        command gitnr create "$@" -f $(git rev-parse --show-toplevel)/.gitignore
+    elif [[ $# == 0 ]]; then
+        command gitnr -h
+    else
+        command gitnr "$@"
+    fi
 }
 
 source <(fzf --zsh)
