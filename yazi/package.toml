@@ -23,10 +23,15 @@ use = "yazi-rs/plugins:git"
 rev = "1962818"
 hash = "26db011a778f261d730d4f5f8bf24b3f"
 
+[[plugin.deps]]
+use = "KKV9/compress"
+rev = "cb6e8ec"
+hash = "424ada4807b20ccd4fc85d1d7c26d1e4"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "349d27f"
-hash = "8eabb4e88096f10905a6df62cfaadbf4"
+rev = "c02c804"
+hash = "7dfe41c9c3d9be76da8a844263d0bbed"
 
 [[flavor.deps]]
 use = "BennyOe/tokyo-night"
