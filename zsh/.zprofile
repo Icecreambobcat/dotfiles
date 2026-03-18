@@ -27,3 +27,5 @@ eval "$(pyenv init - zsh)"
 
 # Added by Obsidian
 export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
+
+eval "$(brew shellenv)"

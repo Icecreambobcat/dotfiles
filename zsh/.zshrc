@@ -1,6 +1,7 @@
 clear
 source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 fpath+=~/.zsh/comps
+. "$HOME/Library/Application Support/PROS/autocomplete/pros-complete.zsh"
 
 if [ $TERM = "xterm-kitty" ]; then
     # unimatrix -c cyan -wfo -s 95 -u '▁▂▃▄▅▆▇█' -l muuuuuuuu
@@ -91,6 +92,9 @@ alias um="unimatrix -c cyan -fa -s 95 -u '▁▂▃▄▅▆▇█' -l muuuuuuuu
 alias ummm="unimatrix -c cyan -fa -s 95 -u '▁▂▃▄▅▆▇█' -l mggggGGGGccccCCCCuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"
 alias sbr="sketchybar --reload"
 alias steam_thing="launchctl remove com.valvesoftware.steam.ipctool"
+
+alias pros='PYTHONWARNINGS="ignore:pkg_resources is deprecated as an API" pros'
+alias prosv5='PYTHONWARNINGS="ignore:pkg_resources is deprecated as an API" pros'
 
 t() { command tre "$@" -e nvim && source "/tmp/tre_aliases_$USER" 2>/dev/null; }
 
