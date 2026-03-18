@@ -54,6 +54,7 @@ return {
         "stylua",
         "texlab",
         "typescript-language-server",
+        "json-lsp",
       },
     },
   },
