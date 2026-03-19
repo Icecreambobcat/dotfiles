@@ -26,6 +26,7 @@ gui:
       - "#c0caf5" # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#color-attributes
   nerdFontsVersion: "3"
 git:
+  overrideGpg: true
   pagers:
     - externalDiffCommand: difft --context=$(cat "$DIFFTCTXFILE" 2>/dev/null || echo 3)
 customCommands:
