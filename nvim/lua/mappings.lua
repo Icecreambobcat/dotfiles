@@ -99,17 +99,17 @@ map({ "n", "v" }, "<RightMouse>", function()
   require("menu").open(options, { mouse = true })
 end, {})
 
-map({ "n", "i", "s" }, "<c-f>", function()
+map({ "n", "i", "s", "v", "x" }, "<C-f>", function()
   if not require("noice.lsp").scroll(4) then
-    return "<c-f>"
+    require("neoscroll").ctrl_f { duration = 450 }
   end
-end, { silent = true, expr = true })
+end, { silent = true })
 
-map({ "n", "i", "s" }, "<c-b>", function()
+map({ "n", "i", "s", "v", "x" }, "<C-b>", function()
   if not require("noice.lsp").scroll(-4) then
-    return "<c-b>"
+    require("neoscroll").ctrl_b { duration = 450 }
   end
-end, { silent = true, expr = true })
+end, { silent = true })
 
 map("c", "<S-Enter>", function()
   require("noice").redirect(vim.fn.getcmdline())
