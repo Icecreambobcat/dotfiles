@@ -1,6 +1,6 @@
 clear
 source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-fpath+=~/.zsh/comps
+fpath+=~/.config/zsh/comps
 . "$HOME/Library/Application Support/PROS/autocomplete/pros-complete.zsh"
 
 if [ $TERM = "xterm-kitty" ]; then
@@ -123,7 +123,7 @@ f() {
 }
 
 w () {
-    ~/.zsh/scripts/fzf.zsh "$@"
+    ~/.config/zsh/scripts/fzf.zsh "$@"
 }
 
 yabai_upgrade() {
