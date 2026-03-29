@@ -345,23 +345,6 @@ return {
       },
     },
   },
-  -- {
-  --   "NeogitOrg/neogit",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim", -- required
-  --     "sindrets/diffview.nvim", -- optional - Diff integration
-  --
-  --     -- Only one of these is needed, not both.
-  --     "nvim-telescope/telescope.nvim", -- optional
-  --   },
-  --   config = function()
-  --     require "configs.neogit"
-  --   end,
-  --   events = { "BufRead", "BufNewFile" },
-  --   keys = {
-  --     { "<leader>G", mode = "n", "<cmd>Neogit<cr>" },
-  --   },
-  -- },
   {
     "folke/noice.nvim",
     dependencies = {
