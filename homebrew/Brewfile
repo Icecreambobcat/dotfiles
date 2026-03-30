@@ -1,7 +1,7 @@
 tap "asmvik/formulae"
 tap "felixkratz/formulae"
 tap "gittower/tap"
-tap "gromgit/fuse"
+tap "icecreambobcat/personal", "git@github.com:Icecreambobcat/homebrew-personal.git"
 tap "jackielii/tap"
 tap "kdash-rs/kdash"
 tap "macos-fuse-t/cask"
@@ -95,7 +95,7 @@ brew "asmvik/formulae/yabai", args: ["HEAD"]
 brew "felixkratz/formulae/borders", args: ["HEAD"]
 brew "felixkratz/formulae/sketchybar"
 brew "gittower/tap/git-flow-next"
-brew "gromgit/fuse/sshfs-mac"
+brew "icecreambobcat/personal/icecreambobcat-sshfs"
 brew "jackielii/tap/skhd-zig"
 brew "kdash-rs/kdash/kdash"
 brew "osx-cross/arm/arm-gcc-bin@10"
