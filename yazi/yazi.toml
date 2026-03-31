@@ -9,7 +9,9 @@ sort_translit = true
 linemode = "size"
 
 [preview]
-image_delay     = 15
+image_delay = 15
+max_width = 1240
+max_height = 2000
 
 [[plugin.prepend_fetchers]]
 id  = "git"
