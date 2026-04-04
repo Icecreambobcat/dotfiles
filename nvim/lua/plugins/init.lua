@@ -125,6 +125,17 @@ return {
     },
   },
   {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    branch = "main",
+    event = "VeryLazy",
+    init = function()
+      vim.g.no_plugin_maps = true
+    end,
+    config = function()
+      require "configs.tstextobjects"
+    end,
+  },
+  {
     "Exafunction/windsurf.nvim",
     event = { "InsertEnter" },
     keys = {
