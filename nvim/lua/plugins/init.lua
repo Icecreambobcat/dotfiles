@@ -436,36 +436,33 @@ return {
       { "<leader>fs", mode = "n", "<cmd>AutoSession search<cr>" },
       { "<leader>sd", mode = "n", "<cmd>AutoSession deletePicker<cr>" },
     },
-
     opts = {
-      enabled = true,
-      root_dir = vim.fn.stdpath "data" .. "/sessions/",
-      auto_save = false,
-      auto_restore = false,
-      auto_create = true,
-      suppressed_dirs = { "~/" },
-      allowed_dirs = nil,
-      auto_restore_last_session = false,
-      use_git_branch = true,
-      lazy_support = true,
-      bypass_save_filetypes = nil,
-      close_unsupported_windows = true,
-      args_allow_single_directory = true,
       args_allow_files_auto_save = false,
+      args_allow_single_directory = true,
+      auto_create = true,
+      auto_restore = false,
+      auto_restore_last_session = false,
+      auto_save = false,
+      close_unsupported_windows = true,
       continue_restore_on_error = true,
       cwd_change_handling = false,
+      enabled = true,
+      git_use_branch_name = true,
+      lazy_support = true,
       log_level = "error",
-
+      root_dir = "/Users/icecreambobcat/.local/share/nvim/sessions/",
       session_lens = {
         load_on_setup = true,
-        theme_conf = {},
+        picker_opts = {
+          previewer = false,
+        },
         previewer = false,
-
         session_control = {
-          control_dir = vim.fn.stdpath "data" .. "/auto_session/",
+          control_dir = "/Users/icecreambobcat/.local/share/nvim/auto_session/",
           control_filename = "session_control.json",
         },
       },
+      suppressed_dirs = { "~/" },
     },
   },
   {
@@ -819,9 +816,14 @@ return {
     },
   },
   {
-    "aznhe21/actions-preview.nvim",
+    "icecreambobcat/actions-preview.nvim",
     event = "bufEnter",
     opts = {
+      highlight_command = {
+        function()
+          return require("actions-preview.highlight").delta("delta --no-gitconfig --side-by-side --syntax-theme=tokyonight_night")
+        end,
+      },
       telescope = {
         sorting_strategy = "ascending",
         layout_strategy = "vertical",
