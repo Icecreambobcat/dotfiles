@@ -821,7 +821,7 @@ return {
     opts = {
       highlight_command = {
         function()
-          return require("actions-preview.highlight").delta("delta --no-gitconfig --side-by-side --syntax-theme=tokyonight_night")
+          return require("actions-preview.highlight").delta "delta --no-gitconfig --side-by-side --syntax-theme=tokyonight_night"
         end,
       },
       telescope = {
@@ -849,4 +849,21 @@ return {
       },
     },
   },
+  -- {
+  --   "oribarilan/lensline.nvim",
+  --   branch = "release/2.x",
+  --   event = "LspAttach",
+  --   opts = {
+  --     profiles = {
+  --       {
+  --         name = "minimal",
+  --         style = {
+  --           placement = "inline",
+  --           prefix = "",
+  --           render = "focused", -- optionally render lenses only for focused function
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
 }
