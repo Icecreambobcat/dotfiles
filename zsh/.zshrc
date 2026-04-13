@@ -87,7 +87,6 @@ alias la="eza -1 -l --icons=auto --classify=auto --git --git-repos --no-user --n
 alias j="zellij"
 alias pipes="pipes.sh -t 3"
 alias clock="tty-clock -sScb -C 6 -f '%A, %d %B, %Y'"
-alias obsidian="Obsidian"
 alias um="unimatrix -c cyan -fa -s 95 -u '▁▂▃▄▅▆▇█' -l muuuuuuuu"
 alias ummm="unimatrix -c cyan -fa -s 95 -u '▁▂▃▄▅▆▇█' -l mggggGGGGccccCCCCuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"
 alias sbr="sketchybar --reload"

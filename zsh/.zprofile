@@ -12,6 +12,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR="nvim"
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+export CMAKE_PREFIX_PATH="/opt/homebrew/opt/llvm"
 export GPG_TTY=$(tty)
 export YABAI_CERT="yabai-cert"
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
