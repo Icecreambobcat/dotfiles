@@ -198,30 +198,6 @@ return {
       }
     end,
   },
-  -- {
-  --   "Exafunction/windsurf.vim",
-  --   event = { "InsertEnter" },
-  --   config = function()
-  --     vim.keymap.set("i", "<C-/>", function()
-  --       return vim.fn["codeium#Accept"]()
-  --     end, { expr = true, silent = true })
-  --     vim.keymap.set("i", "<C-.>", function()
-  --       return vim.fn["codeium#CycleCompletions"](1)
-  --     end, { expr = true, silent = true })
-  --     vim.keymap.set("i", "<C-,>", function()
-  --       return vim.fn["codeium#CycleCompletions"](-1)
-  --     end, { expr = true, silent = true })
-  --     vim.keymap.set("i", "<C-x>", function()
-  --       return vim.fn["codeium#Clear"]()
-  --     end, { expr = true, silent = true })
-  --     vim.keymap.set("i", "<C-;>", function()
-  --       return vim.fn["codeium#Complete"]()
-  --     end, { expr = true, silent = true })
-  --     vim.keymap.set({ "n", "i" }, "<M-CR>", function()
-  --       return vim.fn["codeium#Chat"]()
-  --     end, { expr = true, silent = true })
-  --   end,
-  -- },
   {
     "nvim-telescope/telescope.nvim",
     lazy = false,
@@ -270,7 +246,6 @@ return {
   {
     "saghen/blink.cmp",
     event = { "InsertEnter", "CmdlineEnter" },
-    version = false,
     build = "cargo build --release",
     dependencies = {
       -- {
@@ -279,7 +254,6 @@ return {
       --   -- make sure to set opts so that lazy.nvim calls blink.compat's setup
       --   opts = {},
       -- },
-      { "L3MON4D3/LuaSnip", version = "v2.*" },
       -- { "Exafunction/windsurf.nvim" },
     },
     opts = {
@@ -816,7 +790,7 @@ return {
     },
   },
   {
-    "icecreambobcat/actions-preview.nvim",
+    "aznhe21/actions-preview.nvim",
     event = "bufEnter",
     opts = {
       highlight_command = {
@@ -849,21 +823,4 @@ return {
       },
     },
   },
-  -- {
-  --   "oribarilan/lensline.nvim",
-  --   branch = "release/2.x",
-  --   event = "LspAttach",
-  --   opts = {
-  --     profiles = {
-  --       {
-  --         name = "minimal",
-  --         style = {
-  --           placement = "inline",
-  --           prefix = "",
-  --           render = "focused", -- optionally render lenses only for focused function
-  --         },
-  --       },
-  --     },
-  --   },
-  -- },
 }
