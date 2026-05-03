@@ -55,9 +55,25 @@ shift + alt - j : yabai -m window --warp south || $(yabai -m window --display so
 shift + alt - k : yabai -m window --warp north || $(yabai -m window --display north && yabai -m display --focus north) || yabai -m window --move rel:0:-50
 shift + alt - l : yabai -m window --warp east || $(yabai -m window --display east && yabai -m display --focus east && yabai -m window --warp first) || yabai -m window --move rel:50:0
 
-#move window to prev and next space
-shift + alt - p : yabai -m window --space prev && yabai -m space --focus prev
-shift + alt - n : yabai -m window --space next && yabai -m space --focus next
+# Move window to previous space (cycle)
+shift + alt - g : info=$(yabai -m query --spaces --display) && \
+                  first=$(echo "$info" | jq '.[0]."has-focus"') && \
+                  if [[ $first == "false" ]]; then \
+                      yabai -m window --space prev && yabai -m space --focus prev; \
+                  else \
+                      last_index=$(echo "$info" | jq '.[-1].index') && \
+                      yabai -m window --space "$last_index" && yabai -m space --focus "$last_index"; \
+                  fi
+
+# Move window to next space (cycle)
+shift + alt - 0x29 : info=$(yabai -m query --spaces --display) && \
+                  last=$(echo "$info" | jq '.[-1]."has-focus"') && \
+                  if [[ $last == "false" ]]; then \
+                      yabai -m window --space next && yabai -m space --focus next; \
+                  else \
+                      first_index=$(echo "$info" | jq '.[0].index') && \
+                      yabai -m window --space "$first_index" && yabai -m space --focus "$first_index"; \
+                  fi
 
 # move window to space #
 shift + alt - 1 : SPACES=($(yabai -m query --displays --display | jq '.spaces[]')) && [[ -n $SPACES[1] ]] \
