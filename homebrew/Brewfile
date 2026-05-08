@@ -92,6 +92,7 @@ brew "zlib"
 brew "zoxide"
 brew "zsh"
 brew "zsh-autocomplete"
+brew "zsh-autopair"
 brew "zsh-syntax-highlighting"
 brew "asmvik/formulae/yabai", args: ["HEAD"]
 brew "felixkratz/formulae/borders", args: ["HEAD"]
@@ -150,3 +151,7 @@ cask "visual-studio-code"
 cask "whisky"
 cask "wireshark-app"
 cask "zen"
+uv "-"
+uv "pros-cli", with: ["setuptools==81"]
+uv "pylatexenc"
+uv "virtualenv"
