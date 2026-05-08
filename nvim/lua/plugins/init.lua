@@ -721,6 +721,7 @@ return {
     keys = {
       {
         "<leader>==",
+        desc = "Toggle lint results",
         mode = { "n" },
         function()
           local lint = require "lint"
