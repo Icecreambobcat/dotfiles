@@ -1,8 +1,4 @@
 clear
-source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-fpath+=~/.config/zsh/comps
-. "$HOME/Library/Application Support/PROS/autocomplete/pros-complete.zsh"
-
 if [ $TERM = "xterm-kitty" ]; then
     # unimatrix -c cyan -wfo -s 95 -u '▁▂▃▄▅▆▇█' -l muuuuuuuu
     fastfetch
@@ -64,6 +60,23 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# Autosuggestions and config items
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+bindkey '^ ' autosuggest-accept
+bindkey -M menuselect '^[' undo
+
+# Load other comps
+fpath+=~/.config/zsh/comps
+
+# load PROS completions
+source "$HOME/Library/Application Support/PROS/autocomplete/pros-complete.zsh"
+# Well its a bit of a hack but on well it works
+_pros_completion_silent() {
+  _pros_completion "$@" 2>/dev/null
+}
+compdef _pros_completion_silent pros
 
 ZSH_THEME_TERM_TITLE_IDLE="~"
 ZSH_THEME_TERM_TAB_TITLE_IDLE="~"

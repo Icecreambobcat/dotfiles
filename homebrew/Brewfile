@@ -91,8 +91,8 @@ brew "zellij"
 brew "zlib"
 brew "zoxide"
 brew "zsh"
-brew "zsh-autocomplete"
 brew "zsh-autopair"
+brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "asmvik/formulae/yabai", args: ["HEAD"]
 brew "felixkratz/formulae/borders", args: ["HEAD"]
