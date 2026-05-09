@@ -1,7 +1,7 @@
 require("lint").linters_by_ft = {
   markdown = { "markdownlint" },
   java = { "checkstyle" },
-  python = { "flake8" },
+  python = { "ruff" },
   lua = { "luacheck" },
   cpp = { "cpplint" },
 }

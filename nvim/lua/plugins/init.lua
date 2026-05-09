@@ -39,7 +39,7 @@ return {
         "cpplint",
         "css-lsp",
         "debugpy",
-        "flake8",
+        "ruff",
         "html-lsp",
         "latexindent",
         "ltex-ls",
