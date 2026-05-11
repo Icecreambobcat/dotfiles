@@ -61,11 +61,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# Autosuggestions and config items
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-bindkey '^ ' autosuggest-accept
-bindkey -M menuselect '^[' undo
+# fzf must be loaded before comps
+source <(fzf --zsh)
 
 # Load other comps
 fpath+=~/.config/zsh/comps
@@ -74,9 +71,26 @@ fpath+=~/.config/zsh/comps
 source "$HOME/Library/Application Support/PROS/autocomplete/pros-complete.zsh"
 # Well its a bit of a hack but on well it works
 _pros_completion_silent() {
-  _pros_completion "$@" 2>/dev/null
+    _pros_completion "$@" 2>/dev/null
 }
 compdef _pros_completion_silent pros
+
+source "/opt/homebrew/opt/fzf-tab/share/fzf-tab/fzf-tab.zsh"
+
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:*' fzf-flags --color=fg:4,fg+:14,hl:11,hl+:11 --bind=tab:accept
+zstyle ':fzf-tab:*' switch-group '[' ']'
+zstyle ':fzf-tab:*' prefix ''
+
+# Autosuggestions and config items
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_STRATEGY=(
+    history
+    completion
+)
+bindkey '^ ' autosuggest-accept
+bindkey -M menuselect '^[' undo
 
 ZSH_THEME_TERM_TITLE_IDLE="~"
 ZSH_THEME_TERM_TAB_TITLE_IDLE="~"
@@ -197,6 +211,5 @@ gitnr () {
     fi
 }
 
-source <(fzf --zsh)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-autopair/autopair.zsh
