@@ -82,6 +82,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:*' fzf-flags --color=fg:4,fg+:14,hl:11,hl+:11 --bind=tab:accept
 zstyle ':fzf-tab:*' switch-group '[' ']'
 zstyle ':fzf-tab:*' prefix ''
+zstyle ':completion:::::' completer _expand _complete _ignored _approximate
 
 # Autosuggestions and config items
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
