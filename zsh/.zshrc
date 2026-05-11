@@ -79,10 +79,23 @@ source "/opt/homebrew/opt/fzf-tab/share/fzf-tab/fzf-tab.zsh"
 
 zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:*' fzf-flags --color=fg:4,fg+:14,hl:11,hl+:11 --bind=tab:accept
+zstyle ':fzf-tab:*' fzf-flags --color=fg:4,fg+:14,hl:11,hl+:11:underline --bind=tab:accept
 zstyle ':fzf-tab:*' switch-group '[' ']'
-zstyle ':fzf-tab:*' prefix ''
+zstyle ':fzf-tab:*' prefix '▶ '
 zstyle ':completion:::::' completer _expand _complete _ignored _approximate
+FZF_TAB_GROUP_COLORS=(
+    $'\033[34m'  # blue
+    $'\033[36m'  # cyan
+    $'\033[35m'  # magenta
+    $'\033[32m'  # green
+    $'\033[31m'  # red
+    $'\033[94m'  # bright blue
+    $'\033[96m'  # bright cyan
+    $'\033[95m'  # bright magenta
+    $'\033[92m'  # bright green
+    $'\033[91m'  # bright red
+)
+zstyle ':fzf-tab:*' group-colors $FZF_TAB_GROUP_COLORS
 
 # Autosuggestions and config items
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -91,7 +104,6 @@ ZSH_AUTOSUGGEST_STRATEGY=(
     completion
 )
 bindkey '^ ' autosuggest-accept
-bindkey -M menuselect '^[' undo
 
 ZSH_THEME_TERM_TITLE_IDLE="~"
 ZSH_THEME_TERM_TAB_TITLE_IDLE="~"
