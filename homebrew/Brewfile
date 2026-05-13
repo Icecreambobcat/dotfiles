@@ -56,6 +56,7 @@ brew "neovim"
 brew "node"
 brew "nowplaying-cli"
 brew "numpy"
+brew "ollama", restart_service: :changed
 brew "p7zip"
 brew "pass"
 brew "pinentry-mac"
@@ -94,7 +95,7 @@ brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "asmvik/formulae/yabai", args: ["HEAD"]
 brew "felixkratz/formulae/borders", args: ["HEAD"]
-brew "felixkratz/formulae/sketchybar"
+brew "felixkratz/formulae/sketchybar", args: ["HEAD"]
 brew "gittower/tap/git-flow-next"
 brew "icecreambobcat/personal/icecreambobcat-sshfs"
 brew "jackielii/tap/skhd-zig"
