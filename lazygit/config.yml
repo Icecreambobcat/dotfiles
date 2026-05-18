@@ -23,7 +23,7 @@ gui:
     unstagedChangesColor:
       - "#db4b4b"
     defaultFgColor:
-      - "#c0caf5" # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#color-attributes
+      - "#c0caf5"
   nerdFontsVersion: "3"
 git:
   overrideGpg: true

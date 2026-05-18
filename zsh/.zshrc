@@ -77,9 +77,11 @@ compdef _pros_completion_silent pros
 
 source "/opt/homebrew/opt/fzf-tab/share/fzf-tab/fzf-tab.zsh"
 
+COLOURS="fg:4,fg+:14,hl:11,hl+:11:underline,bg+:#283457,border:#27a1b9,gutter:#16161e,header:#ff9e64,info:#545c7e,marker:#ff007c,pointer:#ff007c,prompt:#2ac3de,query:#c0caf5:regular,scrollbar:#27a1b9,separator:#ff9e64,spinner:#ff007c"
+
 zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:*' fzf-flags --color=fg:4,fg+:14,hl:11,hl+:11:underline --bind=tab:accept
+zstyle ':fzf-tab:*' fzf-flags --ansi --color=$COLOURS --info=inline-right --bind=tab:accept
 zstyle ':fzf-tab:*' switch-group '[' ']'
 zstyle ':fzf-tab:*' prefix '▶ '
 zstyle ':completion:::::' completer _expand _complete _ignored _approximate
@@ -96,6 +98,9 @@ FZF_TAB_GROUP_COLORS=(
     $'\033[91m'  # bright red
 )
 zstyle ':fzf-tab:*' group-colors $FZF_TAB_GROUP_COLORS
+
+unset COLOURS
+unset FZF_TAB_GROUP_COLORS
 
 # Autosuggestions and config items
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -154,11 +159,11 @@ f() {
         --bind 'focus:transform-preview-label:[[ -n {} ]] && printf " Previewing [%s] " {}' \
         --bind 'focus:+transform-header:file --brief {} || echo "No file selected"' \
         --bind 'ctrl-r:change-list-label( Reloading the list )+reload(sleep 2; git ls-files)' \
-        --color 'border:#aaaaaa,label:#cccccc' \
-        --color 'preview-border:#9999cc,preview-label:#ccccff' \
-        --color 'list-border:#669966,list-label:#99cc99' \
-        --color 'input-border:#996666,input-label:#ffcccc' \
-        --color 'header-border:#6699cc,header-label:#99ccff'
+        --color 'border:#565f89,label:#a9b1d6' \
+        --color 'preview-border:#7aa2f7,preview-label:#c0caf5' \
+        --color 'list-border:#73daca,list-label:#9ece6a' \
+        --color 'input-border:#bb9af7,input-label:#c0caf5' \
+        --color 'header-border:#7dcfff,header-label:#bdc7f0'
 }
 
 w () {

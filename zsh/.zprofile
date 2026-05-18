@@ -17,10 +17,35 @@ export CMAKE_PREFIX_PATH="/opt/homebrew/opt/llvm"
 export GPG_TTY=$(tty)
 export YABAI_CERT="yabai-cert"
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
-export FZF_COMPLETION_OPTS='--border --info=inline'
+export FZF_COMPLETION_OPTS='--border --info=inline-right'
 export FZF_COMPLETION_PATH_OPTS='--walker file,dir,follow,hidden'
 export FZF_COMPLETION_DIR_OPTS='--walker dir,follow'
 export FZF_BASE="$(realpath "$(which fzf)")"
+
+export FZF_CTRL_T_OPTS="--layout=reverse --border=none"
+export FZF_CTRL_R_OPTS="--layout=reverse --border=none"
+export FZF_ALT_C_OPTS="--layout=reverse --border=none"
+export FZF_DEFAULT_OPTS="--highlight-line \
+  --info=inline-right \
+  --ansi \
+  --border \
+  --color=bg+:#283457 \
+  --color=border:#27a1b9 \
+  --color=fg:#c0caf5 \
+  --color=gutter:#16161e \
+  --color=header:#ff9e64 \
+  --color=hl+:#2ac3de \
+  --color=hl:#2ac3de \
+  --color=info:#545c7e \
+  --color=marker:#ff007c \
+  --color=pointer:#ff007c \
+  --color=prompt:#2ac3de \
+  --color=query:#c0caf5:regular \
+  --color=scrollbar:#27a1b9 \
+  --color=separator:#ff9e64 \
+  --color=spinner:#ff007c \
+"
+
 export PYTHON_HISTORY=/dev/null
 
 
