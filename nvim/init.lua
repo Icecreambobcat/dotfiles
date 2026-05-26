@@ -124,3 +124,26 @@ hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
 end)
 
 require("ibl").setup { indent = { highlight = highlight }, scope = { highlight = CurrentScope } }
+
+local latex_ts_disabled = vim.api.nvim_create_augroup("LatexTSDisabled", { clear = true })
+
+-- Disable Tree-sitter in LaTeX buffers
+vim.api.nvim_create_autocmd("FileType", {
+  group = latex_ts_disabled,
+  pattern = { "tex", "plaintex", "latex" },
+  callback = function(args)
+    vim.treesitter.stop(args.buf)
+  end,
+})
+
+-- Re-enable Tree-sitter when entering non-LaTeX buffers
+vim.api.nvim_create_autocmd("BufEnter", {
+  group = latex_ts_disabled,
+  callback = function(args)
+    local ft = vim.bo[args.buf].filetype
+
+    if not vim.tbl_contains({ "tex", "plaintex", "latex" }, ft) then
+      pcall(vim.treesitter.start, args.buf)
+    end
+  end,
+})

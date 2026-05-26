@@ -98,7 +98,7 @@ return {
         "javascript",
         "json",
         "kotlin",
-        -- "latex",
+        "latex",
         "ledger",
         "nix",
         "ocaml",
@@ -563,20 +563,28 @@ return {
       require "configs.snacks"
     end,
   },
+  { "jbyuki/nabla.nvim" },
   {
-    "MeanderingProgrammer/markdown.nvim",
-    main = "render-markdown",
-    opts = {},
-    name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
+    "MeanderingProgrammer/render-markdown.nvim",
     ft = { "markdown" },
-    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
     keys = {
       {
         "<leader>rm",
         "<cmd>RenderMarkdown toggle<cr>",
         desc = "Toggle markdown preview",
+      },
+    },
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" },
+    opts = {
+      latex = { enabled = false },
+      win_options = { conceallevel = { rendered = 2 } },
+      on = {
+        render = function()
+          require("nabla").enable_virt { autogen = true }
+        end,
+        clear = function()
+          require("nabla").disable_virt()
+        end,
       },
     },
   },
