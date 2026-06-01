@@ -52,3 +52,4 @@ keybinding:
   universal:
     increaseContextInDiffView: <disabled>
     decreaseContextInDiffView: <disabled>
+    confirmInEditor: [<alt+enter>, <ctrl+s>]
