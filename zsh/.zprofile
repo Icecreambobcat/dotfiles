@@ -17,7 +17,9 @@ export CPPFLAGS="-I/opt/homebrew/opt/llvm/include -I/opt/homebrew/include"
 export CMAKE_PREFIX_PATH="/opt/homebrew/opt/llvm"
 export GPG_TTY=$(tty)
 export YABAI_CERT="yabai-cert"
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --exclude Library'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix --hidden --follow --exclude .git --exclude Library'
 export FZF_COMPLETION_OPTS='--border --info=inline-right'
 export FZF_COMPLETION_PATH_OPTS='--walker file,dir,follow,hidden'
 export FZF_COMPLETION_DIR_OPTS='--walker dir,follow'
