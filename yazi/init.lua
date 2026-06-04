@@ -1,6 +1,6 @@
 require("full-border"):setup()
 require("zoxide"):setup({
-	update_db = false,
+	update_db = true,
 })
 require("git"):setup({
 	-- Order of status signs showing in the linemode
