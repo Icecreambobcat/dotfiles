@@ -1,0 +1,10 @@
+{
+  "trustedtaps": [
+    "asmvik/formulae",
+    "felixkratz/formulae",
+    "gittower/tap",
+    "jackielii/tap",
+    "kdash-rs/kdash",
+    "osx-cross/arm"
+  ]
+}
