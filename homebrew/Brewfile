@@ -1,114 +1,220 @@
-tap "asmvik/formulae"
-tap "felixkratz/formulae"
-tap "gittower/tap"
-tap "jackielii/tap"
-tap "kdash-rs/kdash"
-tap "osx-cross/arm"
+tap "asmvik/formulae", trusted: true
+tap "felixkratz/formulae", trusted: true
+tap "gittower/tap", trusted: true
+tap "jackielii/tap", trusted: true
+tap "kdash-rs/kdash", trusted: true
+tap "osx-cross/arm", trusted: true
+# Library for command-line editing
 brew "readline"
+# Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
+# C library of Git core methods that is re-entrant and linkable
 brew "libgit2"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Generate compilation database for clang tooling
 brew "bear"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# General-purpose data compression with high compression ratio
 brew "xz"
+# Zstandard is a real-time compression algorithm
 brew "zstd"
+# Versatile and fast Unicode/ASCII/ANSI graphics renderer
 brew "chafa"
+# Cross-platform make
 brew "cmake"
+# Create and run Linux containers using lightweight virtual machines
 brew "container"
+# GNU File, Shell, and Text utilities
 brew "coreutils"
+# Command-line interface for SQLite
 brew "sqlite"
+# Diff that understands syntax
 brew "difftastic"
+# Perl lib for reading and writing EXIF metadata
 brew "exiftool"
+# Modern, maintained replacement for ls
 brew "eza"
+# Powerful, lightweight programming language
 brew "lua"
+# Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
+# Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
+# Secure hashing function
 brew "libb2"
+# Play, record, convert, and stream many audio and video codecs
 brew "ffmpeg-full"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# Replace zsh completion selection menu with fzf
 brew "fzf-tab"
+# GNU compiler collection
 brew "gcc"
+# GitHub command-line tool
 brew "gh"
+# Multi-platform software reverse engineering framework
 brew "ghidra"
+# Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Create `.gitignore` using templates from TopTal, GitHub or your own collection
 brew "gitnr"
+# Passphrase entry dialog utilizing the Assuan protocol
 brew "pinentry"
+# GNU Privacy Guard (OpenPGP)
 brew "gnupg"
+# Tools and libraries to manipulate images in select formats
 brew "imagemagick"
+# Tools and libraries to manipulate images in many formats
 brew "imagemagick-full"
+# Lightweight and flexible command-line JSON processor
 brew "jq"
+# Lazier way to manage everything docker
 brew "lazydocker"
+# Simple terminal UI for git commands
 brew "lazygit"
+# Interpreted, interactive, object-oriented programming language
 brew "python@3.14"
+# Next-gen compiler infrastructure
 brew "llvm"
+# Package manager for the Lua programming language
 brew "luarocks"
+# Sudoless performance monitoring for Apple Silicon processors
 brew "macmon"
+# Utility for directing compilation
 brew "make"
+# Development kit for the Java programming language
 brew "openjdk"
+# Java-based project management
 brew "maven"
+# Unified display of technical and tag data for audio/video
 brew "media-info"
+# Media player based on MPlayer and mplayer2
 brew "mpv"
+# Interactive cheatsheet tool for the command-line
 brew "navi"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Open-source, cross-platform JavaScript runtime environment
 brew "node"
+# Retrieves currently playing media, and simulates media actions
 brew "nowplaying-cli"
+# Package for scientific computing with Python
 brew "numpy"
+# Create, run, and share large language models (LLMs)
 brew "ollama", restart_service: :changed
+# Password manager
 brew "pass"
+# Pinentry for GPG on Mac
 brew "pinentry-mac"
+# Animated pipes terminal screensaver
 brew "pipes-sh"
+# Package compiler and linker metadata toolkit
 brew "pkgconf"
+# PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
+# Theme for zsh
 brew "powerlevel10k"
+# Python version management
 brew "pyenv"
+# Interpreted, interactive, object-oriented programming language
 brew "python@3.12"
+# Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
+# SVG rendering tool and library
 brew "resvg"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Rust toolchain installer
 brew "rustup"
+# Software for mathematics, science, and engineering
 brew "scipy"
+# 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
+# Simple and fast anti-censorship tool written in Go
 brew "spoofdpi"
+# Change macOS audio source from the command-line
 brew "switchaudio-osx"
+# Utility to modify the macOS Accessibility Database (TCC.db)
 brew "tccutil"
+# Tool Command Language
 brew "tcl-tk@8", link: true
+# Programmatically correct mistyped console commands
 brew "thefuck"
+# Official tldr client written in Rust
 brew "tlrc"
+# Tree command, improved
 brew "tre-command"
+# Parser generator tool
 brew "tree-sitter-cli"
+# Digital clock in ncurses
 brew "tty-clock"
+# Command-line unarchiving tools supporting multiple formats
 brew "unar"
+# Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# Internet file retriever
 brew "wget"
+# Access X11 clipboards from the command-line
 brew "xclip"
+# Command-line program for getting and setting the contents of the X selection
 brew "xsel"
+# Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi", args: ["HEAD"]
+# Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
+# General-purpose lossless data-compression library
 brew "zlib"
+# Shell extension to navigate your filesystem faster
 brew "zoxide"
+# UNIX shell (command interpreter)
 brew "zsh"
+# Auto-close and delete matching delimiters in zsh
 brew "zsh-autopair"
+# Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
+# Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-brew "asmvik/formulae/yabai", args: ["HEAD"]
+# A tiling window manager for macOS based on binary space partitioning.
+brew "asmvik/formulae/yabai", args: ["HEAD"], trusted: true
+# A window border system for macOS
 brew "felixkratz/formulae/borders", args: ["HEAD"]
+# Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar", args: ["HEAD"]
+# Next-generation Git Flow tool
 brew "gittower/tap/git-flow-next"
+# A fast and simple dashboard for Kubernetes written in Rust
 brew "kdash-rs/kdash/kdash"
+# Pre-built GNU toolchain for Arm Cortex-M and Cortex-R processors
 brew "osx-cross/arm/arm-gcc-bin@15"
+# Image editing and design software
 cask "affinity"
+# Chromium based browser
 cask "arc"
+# Integrated CAD, CAM, CAE, and PCB software
 cask "autodesk-fusion"
+# Installer for BetterDiscord
 cask "betterdiscord-installer"
+# 3D creation suite
 cask "blender"
+# Anthropic's official Claude AI desktop app
 cask "claude"
+# Free app that makes your Internet safer
 cask "cloudflare-warp"
+# Brings the power of Copilot coding agent directly to your terminal
 cask "copilot-cli"
+# Browser for SQLite databases
 cask "db-browser-for-sqlite"
+# Voice and text chat software
 cask "discord"
+# App to build and share containerised applications and microservices
 cask "docker-desktop"
+# Launcher for *Epic Games* games
 cask "epic-games"
 cask "font-comfortaa"
 cask "font-exo"
@@ -119,36 +225,67 @@ cask "font-sf-mono"
 cask "font-sf-pro"
 cask "font-source-serif-4"
 cask "font-symbols-only-nerd-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# JetBrains tools manager
 cask "jetbrains-toolbox"
+# Menu bar manager
 cask "jordanbaird-ice@beta"
+# Open-source keystroke visualiser
 cask "keycastr"
+# Electronics design automation suite
 cask "kicad"
+# GPU-based terminal emulator
 cask "kitty"
+# Tool to show what is persistently installed on the computer
 cask "knockknock"
+# Free and open-source painting and sketching program
 cask "krita"
+# Free cross-platform office suite, fresh version
 cask "libreoffice"
+# Software for Logitech devices
 cask "logi-options+"
+# File system integration
 cask "macfuse"
+# Controls and monitors all fans on Apple computers
 cask "macs-fan-control"
+# Full TeX Live distribution with GUI applications
 cask "mactex"
+# Smooths scrolling and set mouse scroll directions independently
 cask "mos@beta"
+# App to write, plan, collaborate, and get organised
 cask "notion"
+# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Verify system files structure, run miscellaneous maintenance and more
 cask "onyx"
+# Utility to uninstall apps and remove leftover files from old/uninstalled apps
 cask "pearcleaner"
+# VPN client focusing on security
 cask "protonvpn"
+# Control your tools with a few keystrokes
 cask "raycast"
+# Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
+# Simple hotkey daemon written in Zig
 cask "jackielii/tap/skhd-zig"
+# PDF reader and note-taking application
 cask "skim"
+# Music streaming service
 cask "spotify"
+# Network filesystem client to connect to SSH servers
 cask "sshfs-mac"
+# Video game digital distribution service
 cask "steam"
+# Web browser focusing on security
 cask "tor-browser"
+# Open-source code editor
 cask "visual-studio-code"
+# Wine wrapper built with SwiftUI
 cask "whisky"
+# Network protocol analyzer
 cask "wireshark-app"
+# Gecko based web browser
 cask "zen"
 uv "poetry"
 uv "pros-cli", with: ["setuptools==81"]

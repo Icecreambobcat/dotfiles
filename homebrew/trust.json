@@ -6,5 +6,8 @@
     "jackielii/tap",
     "kdash-rs/kdash",
     "osx-cross/arm"
+  ],
+  "trustedformulae": [
+    "asmvik/formulae/yabai"
   ]
 }
