@@ -259,6 +259,8 @@ cask "notion"
 cask "obsidian"
 # Verify system files structure, run miscellaneous maintenance and more
 cask "onyx"
+# Rhythm game
+cask "osu"
 # Utility to uninstall apps and remove leftover files from old/uninstalled apps
 cask "pearcleaner"
 # VPN client focusing on security

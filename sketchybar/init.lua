@@ -1,3 +1,8 @@
+os.execute("[ ! -d $HOME/.local/share/sketchybar_lua/ ] && (git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/)")
+local HOME = os.getenv("HOME")
+package.cpath = package.cpath
+    .. ";" .. HOME .. "/.local/share/sketchybar_lua/?.so"
+
 -- Require the sketchybar module
 sbar = require("sketchybar")
 
@@ -6,6 +11,7 @@ sbar = require("sketchybar")
 
 -- Bundle the entire initial configuration into a single message to sketchybar
 sbar.begin_config()
+sbar.hotload(true)
 require("bar")
 require("default")
 require("items")
