@@ -1,8 +1,7 @@
-os.execute(
-	"[ ! -d $HOME/.local/share/sketchybar_lua/ ] && (git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/)"
-)
+os.execute("[ ! -d $HOME/.local/share/sketchybar_lua/ ] && (git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/)")
 local HOME = os.getenv("HOME")
-package.cpath = package.cpath .. ";" .. HOME .. "/.local/share/sketchybar_lua/?.so"
+package.cpath = package.cpath
+    .. ";" .. HOME .. "/.local/share/sketchybar_lua/?.so"
 
 -- Require the sketchybar module
 sbar = require("sketchybar")

@@ -18,7 +18,7 @@ for i = 1, 10, 1 do
 		},
 		label = {
 			padding_right = 20,
-			color = colors.lgrey,
+			color = colors.grey,
 			highlight_color = colors.white,
 			font = "sketchybar-app-font:Regular:16.0",
 			y_offset = -1,
@@ -26,28 +26,23 @@ for i = 1, 10, 1 do
 		padding_right = 1,
 		padding_left = 1,
 		background = {
-			color = colors.glass.bg,
+			color = colors.bg1,
+			border_width = 1,
 			height = 26,
+			border_color = colors.black,
 		},
-		popup = {
-			background = {
-				border_width = 4,
-				border_color = colors.glass.border_off,
-				corner_radius = 12,
-			},
-		},
+		popup = { background = { border_width = 5, border_color = colors.black } },
 	})
 
 	spaces[i] = space
 
-	-- Liquid glass outer rim
+	-- Single item bracket for space items to achieve double border on highlight
 	local space_bracket = sbar.add("bracket", { space.name }, {
 		background = {
 			color = colors.transparent,
-			border_color = colors.glass.border_off,
+			border_color = colors.bg2,
 			height = 28,
-			border_width = 1,
-			corner_radius = 12,
+			border_width = 2,
 		},
 	})
 
@@ -60,12 +55,12 @@ for i = 1, 10, 1 do
 
 	local space_popup = sbar.add("item", {
 		position = "popup." .. space.name,
-		padding_left = 4,
+		padding_left = 5,
 		padding_right = 0,
 		background = {
 			drawing = true,
 			image = {
-				corner_radius = 10,
+				corner_radius = 9,
 				scale = 0.2,
 			},
 		},
@@ -73,17 +68,14 @@ for i = 1, 10, 1 do
 
 	space:subscribe("space_change", function(env)
 		local selected = env.SELECTED == "true"
+		local color = selected and colors.grey or colors.bg2
 		space:set({
 			icon = { highlight = selected },
 			label = { highlight = selected },
-			background = {
-				color = selected and colors.glass.bg_alt or colors.glass.bg,
-			},
+			background = { border_color = selected and colors.black or colors.bg2 },
 		})
 		space_bracket:set({
-			background = {
-				border_color = selected and colors.glass.border_on or colors.glass.border_off,
-			},
+			background = { border_color = selected and colors.grey or colors.bg2 },
 		})
 	end)
 
@@ -113,7 +105,7 @@ local spaces_indicator = sbar.add("item", {
 	icon = {
 		padding_left = 8,
 		padding_right = 9,
-		color = colors.lgrey,
+		color = colors.grey,
 		string = icons.switch.on,
 	},
 	label = {
@@ -121,12 +113,11 @@ local spaces_indicator = sbar.add("item", {
 		padding_left = 0,
 		padding_right = 8,
 		string = "Spaces",
-		color = colors.white,
+		color = colors.bg1,
 	},
 	background = {
-		color = colors.with_alpha(colors.glass.bg, 0.0),
-    border_color = colors.with_alpha(colors.glass.border_off, 0.0),
-    border_width = 1,
+		color = colors.with_alpha(colors.grey, 0.0),
+		border_color = colors.with_alpha(colors.bg1, 0.0),
 	},
 })
 
@@ -151,19 +142,18 @@ end)
 spaces_indicator:subscribe("swap_menus_and_spaces", function(env)
 	local currently_on = spaces_indicator:query().icon.value == icons.switch.on
 	spaces_indicator:set({
-		icon = currently_on and icons.switch.off or icons.switch.on, label = currently_on and "Menus" or "Spaces",
+		icon = currently_on and icons.switch.off or icons.switch.on,
 	})
 end)
 
 spaces_indicator:subscribe("mouse.entered", function(env)
 	sbar.animate("tanh", 30, function()
 		spaces_indicator:set({
-      padding_left = 0,
 			background = {
-				color = colors.glass.bg,
-        border_color = colors.glass.border_off,
+				color = { alpha = 1.0 },
+				border_color = { alpha = 1.0 },
 			},
-			icon = { color = colors.white },
+			icon = { color = colors.bg1 },
 			label = { width = "dynamic" },
 		})
 	end)
@@ -172,12 +162,11 @@ end)
 spaces_indicator:subscribe("mouse.exited", function(env)
 	sbar.animate("tanh", 30, function()
 		spaces_indicator:set({
-      padding_left = -3,
 			background = {
-				color = colors.with_alpha(colors.glass.bg, 0.0),
-        border_color = colors.with_alpha(colors.glass.border_off, 0.0),
+				color = { alpha = 0.0 },
+				border_color = { alpha = 0.0 },
 			},
-			icon = { color = colors.lgrey },
+			icon = { color = colors.grey },
 			label = { width = 0 },
 		})
 	end)
