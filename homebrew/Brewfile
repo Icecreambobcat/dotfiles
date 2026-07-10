@@ -1,5 +1,5 @@
 tap "asmvik/formulae", trusted: true
-tap "felixkratz/formulae", trusted: true
+tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
 tap "gittower/tap", trusted: true
 tap "jackielii/tap", trusted: true
 tap "kdash-rs/kdash", trusted: true
@@ -289,6 +289,7 @@ cask "whisky"
 cask "wireshark-app"
 # Gecko based web browser
 cask "zen"
+uv "garmin-mcp", source: "git+https://github.com/Taxuspt/garmin_mcp"
 uv "poetry"
 uv "pros-cli", with: ["setuptools==81"]
 uv "pyinstaller"
