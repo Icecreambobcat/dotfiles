@@ -1,4 +1,5 @@
 tap "asmvik/formulae", trusted: true
+tap "betterdiscord/tap"
 tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
 tap "gittower/tap", trusted: true
 tap "jackielii/tap", trusted: true
@@ -36,8 +37,6 @@ brew "difftastic"
 brew "exiftool"
 # Modern, maintained replacement for ls
 brew "eza"
-# Powerful, lightweight programming language
-brew "lua"
 # Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
@@ -82,6 +81,8 @@ brew "lazygit"
 brew "python@3.14"
 # Next-gen compiler infrastructure
 brew "llvm"
+# Powerful, lightweight programming language
+brew "lua"
 # Package manager for the Lua programming language
 brew "luarocks"
 # Sudoless performance monitoring for Apple Silicon processors
@@ -198,8 +199,8 @@ cask "affinity"
 cask "arc"
 # Integrated CAD, CAM, CAE, and PCB software
 cask "autodesk-fusion"
-# Installer for BetterDiscord
-cask "betterdiscord-installer"
+# A cross-platform CLI for managing BetterDiscord.
+cask "betterdiscord/tap/bdcli", trusted: true
 # 3D creation suite
 cask "blender"
 # Anthropic's official Claude AI desktop app

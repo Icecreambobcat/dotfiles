@@ -67,6 +67,8 @@ source <(fzf --zsh)
 # Load other comps
 fpath+=~/.config/zsh/comps
 
+eval "$(bdcli completion zsh)"
+
 # load PROS completions
 source "$HOME/Library/Application Support/PROS/autocomplete/pros-complete.zsh"
 # Well its a bit of a hack but on well it works
