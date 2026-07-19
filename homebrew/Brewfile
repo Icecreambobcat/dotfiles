@@ -197,14 +197,10 @@ brew "osx-cross/arm/arm-gcc-bin@15"
 cask "affinity"
 # Chromium based browser
 cask "arc"
-# Integrated CAD, CAM, CAE, and PCB software
-cask "autodesk-fusion"
 # A cross-platform CLI for managing BetterDiscord.
 cask "betterdiscord/tap/bdcli", trusted: true
 # 3D creation suite
 cask "blender"
-# Anthropic's official Claude AI desktop app
-cask "claude"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
 # Brings the power of Copilot coding agent directly to your terminal
@@ -226,8 +222,6 @@ cask "font-sf-mono"
 cask "font-sf-pro"
 cask "font-source-serif-4"
 cask "font-symbols-only-nerd-font"
-# Terminal emulator that uses platform-native UI and GPU acceleration
-cask "ghostty"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
 # Menu bar manager
