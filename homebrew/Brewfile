@@ -29,8 +29,6 @@ brew "cmake"
 brew "container"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
-# Command-line interface for SQLite
-brew "sqlite"
 # Diff that understands syntax
 brew "difftastic"
 # Perl lib for reading and writing EXIF metadata
@@ -222,6 +220,8 @@ cask "font-sf-mono"
 cask "font-sf-pro"
 cask "font-source-serif-4"
 cask "font-symbols-only-nerd-font"
+# Update maps and software, sync with Garmin Connect and register your device
+cask "garmin-express"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
 # Menu bar manager
@@ -254,6 +254,8 @@ cask "notion"
 cask "obsidian"
 # Verify system files structure, run miscellaneous maintenance and more
 cask "onyx"
+# Android file transfer
+cask "openmtp"
 # Rhythm game
 cask "osu"
 # Utility to uninstall apps and remove leftover files from old/uninstalled apps
@@ -282,8 +284,6 @@ cask "visual-studio-code"
 cask "whisky"
 # Network protocol analyzer
 cask "wireshark-app"
-# Gecko based web browser
-cask "zen"
 uv "garmin-mcp", source: "git+https://github.com/Taxuspt/garmin_mcp"
 uv "poetry"
 uv "pros-cli", with: ["setuptools==81"]
