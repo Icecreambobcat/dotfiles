@@ -27,8 +27,9 @@ gui:
   nerdFontsVersion: "3"
 git:
   overrideGpg: true
-  pagers:
-    - externalDiffCommand: difft --context=$(cat "$DIFFTCTXFILE" 2>/dev/null || echo 3)
+  diffRenderers:
+    - command: difft --context=$(cat "$DIFFTCTXFILE" 2>/dev/null || echo 3)
+      type: extDiff
 customCommands:
   - key: "}"
     context: "global"
