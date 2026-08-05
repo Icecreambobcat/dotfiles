@@ -125,8 +125,7 @@ poetry_env() {
     eval $(poetry env activate)
 }
 
-# alias lg="lazygit"
-alias lazygit="lg"
+alias lg="lazygit"
 alias ld="lazydocker"
 alias kd="kdash"
 alias n="nvim"
@@ -208,16 +207,6 @@ zpipe () {
     else
         zellij pipe -p $1;
     fi
-}
-
-lg () {
-    local ctxfile
-    ctxfile=$(mktemp -t difft_ctx.XXXXXX)
-    echo 3 > "$ctxfile"
-    export DIFFTCTXFILE="$ctxfile"
-    command lazygit "$@"
-    unset DIFFTCTXFILE
-    rm -f "$ctxfile"
 }
 
 gitnr () {

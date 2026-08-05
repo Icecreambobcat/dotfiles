@@ -28,29 +28,8 @@ gui:
 git:
   overrideGpg: true
   diffRenderers:
-    - command: difft --context=$(cat "$DIFFTCTXFILE" 2>/dev/null || echo 3)
+    - command: difft --context={{diffContext}}
       type: extDiff
-customCommands:
-  - key: "}"
-    context: "global"
-    description: "Increase diff context"
-    command: |
-      C=$(cat "$DIFFTCTXFILE" 2>/dev/null || echo 3)
-      echo $((C+1)) > "$DIFFTCTXFILE"
-      echo "difft context: $(cat "$DIFFTCTXFILE")"
-    output: "log"
-  - key: "{"
-    context: "global"
-    description: "Decrease diff context"
-    command: |
-      C=$(cat "$DIFFTCTXFILE" 2>/dev/null || echo 3)
-      N=$((C-1))
-      [ $N -lt 0 ] && N=0
-      echo $N > "$DIFFTCTXFILE"
-      echo "difft context: $(cat "$DIFFTCTXFILE")"
-    output: "log"
 keybinding:
   universal:
-    increaseContextInDiffView: <disabled>
-    decreaseContextInDiffView: <disabled>
     confirmInEditor: [<alt+enter>, <ctrl+s>]
