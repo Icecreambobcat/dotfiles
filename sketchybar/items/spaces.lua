@@ -109,7 +109,7 @@ local space_window_observer = sbar.add("item", {
 
 local spaces_indicator = sbar.add("item", {
 	padding_left = -3,
-	padding_right = 0,
+	padding_right = -3,
 	icon = {
 		padding_left = 8,
 		padding_right = 9,
@@ -159,6 +159,7 @@ spaces_indicator:subscribe("mouse.entered", function(env)
 	sbar.animate("tanh", 30, function()
 		spaces_indicator:set({
       padding_left = 0,
+      padding_right = 0,
 			background = {
 				color = colors.glass.bg,
         border_color = colors.glass.border_off,
@@ -173,6 +174,7 @@ spaces_indicator:subscribe("mouse.exited", function(env)
 	sbar.animate("tanh", 30, function()
 		spaces_indicator:set({
       padding_left = -3,
+      padding_right = -3,
 			background = {
 				color = colors.with_alpha(colors.glass.bg, 0.0),
         border_color = colors.with_alpha(colors.glass.border_off, 0.0),
