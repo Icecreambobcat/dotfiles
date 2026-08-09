@@ -69,14 +69,16 @@ brew "gnupg"
 brew "imagemagick"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick-full"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
+# Convert images to PDF via direct JPEG inclusion
+brew "img2pdf"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Lazier way to manage everything docker
 brew "lazydocker"
 # Simple terminal UI for git commands
 brew "lazygit"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.14"
 # Next-gen compiler infrastructure
 brew "llvm"
 # Powerful, lightweight programming language
@@ -199,6 +201,8 @@ cask "arc"
 cask "betterdiscord/tap/bdcli", trusted: true
 # 3D creation suite
 cask "blender"
+# E-books management software
+cask "calibre"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
 # Brings the power of Copilot coding agent directly to your terminal
