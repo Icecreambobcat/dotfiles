@@ -121,10 +121,6 @@ VI_MODE_SET_CURSOR=true
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-poetry_env() {
-    eval $(poetry env activate)
-}
-
 alias lg="lazygit"
 alias ld="lazydocker"
 alias kd="kdash"
@@ -140,6 +136,12 @@ alias steam_thing="launchctl remove com.valvesoftware.steam.ipctool"
 
 alias pros='PYTHONWARNINGS="ignore:pkg_resources is deprecated as an API" pros'
 alias prosv5='PYTHONWARNINGS="ignore:pkg_resources is deprecated as an API" pros'
+
+setopt extended_glob
+
+poetry_env() {
+    eval $(poetry env activate)
+}
 
 t() { command tre "$@" -e nvim && source "/tmp/tre_aliases_$USER" 2>/dev/null; }
 
