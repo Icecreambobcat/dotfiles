@@ -761,16 +761,16 @@ return {
     "nvzone/minty",
     cmd = { "Shades", "Huefy" },
   },
-  {
-    "atiladefreitas/dooing",
-    event = "VeryLazy",
-    opts = {
-      window = {
-        width = 144,
-        height = 48,
-      },
-    },
-  },
+  -- {
+  --   "atiladefreitas/dooing",
+  --   event = "VeryLazy",
+  --   opts = {
+  --     window = {
+  --       width = 144,
+  --       height = 48,
+  --     },
+  --   },
+  -- },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
