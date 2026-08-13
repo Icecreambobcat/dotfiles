@@ -65,12 +65,16 @@ brew "gitnr"
 brew "pinentry"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
+# Popular GNU data compression program
+brew "gzip"
 # Tools and libraries to manipulate images in select formats
 brew "imagemagick"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick-full"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.14"
+# Tools for and transforming and inspecting PDF files
+brew "qpdf"
 # Convert images to PDF via direct JPEG inclusion
 brew "img2pdf"
 # Lightweight and flexible command-line JSON processor
