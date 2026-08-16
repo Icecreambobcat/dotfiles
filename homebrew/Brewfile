@@ -170,7 +170,7 @@ brew "xclip"
 # Command-line program for getting and setting the contents of the X selection
 brew "xsel"
 # Blazing fast terminal file manager written in Rust, based on async I/O
-brew "yazi", args: ["HEAD"]
+brew "yazi"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
 # General-purpose lossless data-compression library
