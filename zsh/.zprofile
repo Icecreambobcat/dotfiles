@@ -4,6 +4,7 @@ export PATH="$PATH:/Users/icecreambobcat/Library/Application Support/JetBrains/T
 export PATH="/opt/homebrew/opt/arm-gcc-bin@15/bin:$PATH"
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 export PATH="$PATH:/Users/icecreambobcat/.local/bin"
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
