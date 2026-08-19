@@ -23,10 +23,6 @@ ENABLE_CORRECTION="false"
 ZSH_COMPDUMP="$ZSH_CACHE_DIR/.zcompdump"
 HIST_STAMPS="dd.mm.yyyy"
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-
 plugins=(
     git
     gh
