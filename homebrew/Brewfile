@@ -250,6 +250,10 @@ cask "knockknock"
 cask "krita"
 # Free cross-platform office suite, fresh version
 cask "libreoffice"
+# Discover, download, and run local LLMs
+cask "lm-studio"
+# AI agent for working with open models
+cask "lm-studio-bionic"
 # Software for Logitech devices
 cask "logi-options+"
 # File system integration
