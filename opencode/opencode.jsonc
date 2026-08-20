@@ -1,0 +1,26 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "lsp" : true,
+  "provider": {
+    "lmstudio": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LM Studio (local)",
+      "options": {
+        "baseURL": "http://127.0.0.1:1234/v1",
+        "plugins": ["-opencode.provider.lmstudio"]
+      },
+      "whitelist": [
+        "google/gemma-4-26b-a4b-qat",
+        "qwen/qwen3.8-27b"
+      ],
+      "models": {
+        "google/gemma-4-26b-a4b-qat": {
+          "name": "Gemma 4 26b a4b qat (local)",
+        },
+        "qwen/qwen3.8-27b": {
+          "name": "Qwen 3.8 27b (local)",
+        },
+      },
+    },
+  },
+}

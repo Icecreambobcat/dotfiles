@@ -1,3 +1,4 @@
+tap "anomalyco/tap"
 tap "asmvik/formulae", trusted: true
 tap "betterdiscord/tap"
 tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
@@ -187,6 +188,8 @@ brew "zsh-autopair"
 brew "zsh-autosuggestions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode", trusted: true
 # A tiling window manager for macOS based on binary space partitioning.
 brew "asmvik/formulae/yabai", args: ["HEAD"], trusted: true
 # A window border system for macOS

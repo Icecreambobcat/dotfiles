@@ -8,6 +8,7 @@
     "osx-cross/arm"
   ],
   "trustedformulae": [
+    "anomalyco/tap/opencode",
     "asmvik/formulae/yabai"
   ],
   "trustedcasks": [
