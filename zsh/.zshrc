@@ -117,10 +117,21 @@ VI_MODE_SET_CURSOR=true
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+_opacity_hack() {
+    if [ -n "$KITTY_WINDOW_ID" ]; then
+        kitten @ set-background-opacity 1.0
+        command "$@"
+        kitten @ set-background-opacity 0.925
+    else
+        command "$@"
+    fi
+}
+
 alias lg="lazygit"
 alias ld="lazydocker"
 alias kd="kdash"
 alias n="nvim"
+alias opencode="_opacity_hack opencode"
 alias la="eza -1 -l --icons=auto --classify=auto --git --git-repos --no-user --no-permissions"
 alias j="zellij"
 alias pipes="pipes.sh -t 3"
