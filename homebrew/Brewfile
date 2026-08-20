@@ -115,7 +115,7 @@ brew "nowplaying-cli"
 # Package for scientific computing with Python
 brew "numpy"
 # Create, run, and share large language models (LLMs)
-brew "ollama", restart_service: :changed
+brew "ollama"
 # Password manager
 brew "pass"
 # Pinentry for GPG on Mac

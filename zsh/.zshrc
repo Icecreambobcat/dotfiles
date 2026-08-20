@@ -140,6 +140,8 @@ alias um="unimatrix -c cyan -fa -s 95 -u '▁▂▃▄▅▆▇█' -l muuuuuuuu
 alias ummm="unimatrix -c cyan -fa -s 95 -u '▁▂▃▄▅▆▇█' -l mggggGGGGccccCCCCuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"
 alias sbr="sketchybar --reload"
 alias steam_thing="launchctl remove com.valvesoftware.steam.ipctool"
+alias btop="_opacity_hack btop"
+alias codex="_opacity_hack codex"
 
 alias pros='PYTHONWARNINGS="ignore:pkg_resources is deprecated as an API" pros'
 alias prosv5='PYTHONWARNINGS="ignore:pkg_resources is deprecated as an API" pros'
