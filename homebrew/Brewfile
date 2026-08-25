@@ -32,6 +32,10 @@ brew "container"
 brew "coreutils"
 # Diff that understands syntax
 brew "difftastic"
+# Secure hashing function
+brew "libb2"
+# Small tool to convert Djvu files to PDF files
+brew "djvu2pdf"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
 # Modern, maintained replacement for ls
@@ -42,8 +46,6 @@ brew "fastfetch"
 brew "fd"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
-# Secure hashing function
-brew "libb2"
 # Play, record, convert, and stream many audio and video codecs
 brew "ffmpeg-full"
 # Command-line fuzzy finder written in Go
