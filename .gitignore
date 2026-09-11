@@ -11,4 +11,6 @@ github-copilot/apps.json
 ghidra
 wireshark
 .copilot
-.wrangler
+.wrangler/*
+!.wrangler/preferences.json
+.rclone
