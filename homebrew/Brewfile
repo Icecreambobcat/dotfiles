@@ -38,6 +38,8 @@ brew "coreutils"
 brew "difftastic"
 # Secure hashing function
 brew "libb2"
+# Interpreter for PostScript and PDF
+brew "ghostscript"
 # Small tool to convert Djvu files to PDF files
 brew "djvu2pdf"
 # Perl lib for reading and writing EXIF metadata
@@ -138,6 +140,8 @@ brew "pyenv"
 brew "python@3.12"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
+# Rsync for cloud storage
+brew "rclone"
 # SVG rendering tool and library
 brew "resvg"
 # Search tool like grep and The Silver Searcher
