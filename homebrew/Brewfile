@@ -24,6 +24,10 @@ brew "xz"
 brew "zstd"
 # Versatile and fast Unicode/ASCII/ANSI graphics renderer
 brew "chafa"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# CLI tool for Cloudflare Workers
+brew "cloudflare-wrangler"
 # Cross-platform make
 brew "cmake"
 # Create and run Linux containers using lightweight virtual machines
@@ -110,8 +114,6 @@ brew "mpv"
 brew "navi"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Open-source, cross-platform JavaScript runtime environment
-brew "node"
 # Retrieves currently playing media, and simulates media actions
 brew "nowplaying-cli"
 # Package for scientific computing with Python
