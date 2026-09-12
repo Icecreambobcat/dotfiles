@@ -13,4 +13,4 @@ wireshark
 .copilot
 .wrangler/*
 !.wrangler/preferences.json
-.rclone
+rclone
