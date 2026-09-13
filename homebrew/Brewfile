@@ -6,6 +6,7 @@ tap "gittower/tap", trusted: true
 tap "jackielii/tap", trusted: true
 tap "kdash-rs/kdash", trusted: true
 tap "osx-cross/arm", trusted: true
+tap "sikarugir-app/sikarugir", "https://github.com/Sikarugir-App/homebrew-sikarugir", trusted: true
 # Library for command-line editing
 brew "readline"
 # Cryptography and SSL/TLS Toolkit
@@ -293,6 +294,8 @@ cask "protonvpn"
 cask "raycast"
 # Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
+# Porting tool, to make Windows programs/games into native apps
+cask "sikarugir-app/sikarugir/sikarugir", trusted: true
 # Simple hotkey daemon written in Zig
 cask "jackielii/tap/skhd-zig"
 # PDF reader and note-taking application
@@ -307,8 +310,6 @@ cask "steam"
 cask "tor-browser"
 # Open-source code editor
 cask "visual-studio-code"
-# Wine wrapper built with SwiftUI
-cask "whisky"
 # Network protocol analyzer
 cask "wireshark-app"
 uv "garmin-mcp", source: "git+https://github.com/Taxuspt/garmin_mcp"

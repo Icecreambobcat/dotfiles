@@ -5,13 +5,15 @@
     "gittower/tap",
     "jackielii/tap",
     "kdash-rs/kdash",
-    "osx-cross/arm"
+    "osx-cross/arm",
+    "sikarugir-app/sikarugir"
   ],
   "trustedformulae": [
     "anomalyco/tap/opencode",
     "asmvik/formulae/yabai"
   ],
   "trustedcasks": [
-    "betterdiscord/tap/bdcli"
+    "betterdiscord/tap/bdcli",
+    "sikarugir-app/sikarugir/sikarugir"
   ]
 }
