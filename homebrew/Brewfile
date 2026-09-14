@@ -246,6 +246,8 @@ cask "font-source-serif-4"
 cask "font-symbols-only-nerd-font"
 # Update maps and software, sync with Garmin Connect and register your device
 cask "garmin-express"
+# Homebrew's official GUI
+cask "homebrew-app"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
 # Menu bar manager
