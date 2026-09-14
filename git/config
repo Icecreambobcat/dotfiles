@@ -10,6 +10,9 @@
 	defaultBranch = main
 [core]
 	excludesfile = /Users/icecreambobcat/.config/git/ignore
+	preloadIndex = true
+	commitGraph = true
+	fsmonitor = true
 [credential "https://github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
@@ -26,3 +29,11 @@
     tool = difftastic
 [pull]
 	ff = only
+[pack]
+	threads = 0
+[feature]
+	manyFiles = true
+[fetch]
+	writeCommitGraph = true
+[index]
+	skipHash = false
