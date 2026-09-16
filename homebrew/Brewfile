@@ -250,8 +250,6 @@ cask "garmin-express"
 cask "homebrew-app"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
-# Menu bar manager
-cask "jordanbaird-ice@beta"
 # Open-source keystroke visualiser
 cask "keycastr"
 # Electronics design automation suite
