@@ -106,7 +106,7 @@ local ssid = sbar.add("item", {
 	},
 	background = {
 		height = 2,
-		color = colors.glass.border_off,
+		color = colors.popup.separator,
 		y_offset = -15,
 	},
 })

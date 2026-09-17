@@ -11,5 +11,5 @@ sbar.bar({
 	corner_radius = 16,
 	y_offset = 6,
 	margin = 4,
-	blur_radius = 32,
+	blur_radius = 48,
 })

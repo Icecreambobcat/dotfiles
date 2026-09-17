@@ -18,23 +18,29 @@ return {
 	-- some custom colours
 	lgrey = 0xff9199ba,
 
-	-- Liquid Glass palette
+	-- macOS 27-inspired frost with distinct Tokyo Night control surfaces
 	glass = {
-		bg = 0x8011111a,
-		bg_alt = 0xc0181927,
+		-- Dark capsules remain distinct from the lighter blurred bar.
+		bg = 0x901b1d2b,
+		bg_alt = 0xaf2c3048,
 
-		border_on = 0x60c0caf5,
-		border_off = 0x60414868,
+		-- Soft lit rims retain separation; selection gets a brighter edge.
+		border_on = 0x84c0caf5,
+		border_off = 0x589199ba,
 	},
 
 	bar = {
-		bg = 0x601a1b26,
-		border = 0x40c0caf5,
+		-- Let the blurred backdrop show between the stronger capsules.
+		bg = 0x801a1b26,
+		border = 0x409199ba,
 	},
 
 	popup = {
-		bg = 0xc0181927,
-		border = 0x60c0caf5,
+		-- Lighter storm tint preserves backdrop colour under stronger blur.
+		bg = 0xc024283b,
+		bg_alt = 0xd024283b,
+		border = 0x609199ba,
+		separator = 0x309199ba,
 	},
 
 	with_alpha = function(color, alpha)

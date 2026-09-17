@@ -14,7 +14,7 @@ local apple = sbar.add("item", {
 	},
 	label = { drawing = false },
 	background = {
-		color = colors.glass.bg_alt,
+		color = colors.glass.bg,
 	},
 	padding_left = 1,
 	padding_right = 1,

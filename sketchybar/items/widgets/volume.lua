@@ -78,7 +78,7 @@ local volume_slider = sbar.add("slider", popup_width, {
 		},
 	},
 	background = {
-		color = colors.glass.border_off,
+		color = colors.popup.separator,
 		height = 2,
 		y_offset = -20,
 	},

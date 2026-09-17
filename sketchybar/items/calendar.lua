@@ -25,7 +25,7 @@ local cal = sbar.add("item", {
 	padding_left = 1,
 	padding_right = 1,
 	background = {
-		color = colors.glass.bg_alt,
+		color = colors.glass.bg,
 	},
 	click_script = "open -a 'Calendar'",
 })

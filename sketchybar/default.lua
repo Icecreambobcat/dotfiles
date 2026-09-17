@@ -48,7 +48,8 @@ sbar.default({
 			color = colors.popup.bg,
 			shadow = { drawing = true },
 		},
-		blur_radius = 64,
+		-- Smooth background detail without making the popup nearly opaque.
+		blur_radius = 80,
     y_offset = 4,
 	},
 	padding_left = 5,

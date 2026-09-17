@@ -8,14 +8,14 @@ local spaces = {}
 for i = 1, 10, 1 do
 	local space = sbar.add("space", "space." .. i, {
 		space = i,
-		icon = {
-			font = { family = settings.font.numbers },
-			string = i,
-			padding_left = 15,
-			padding_right = 8,
-			color = colors.white,
-			highlight_color = colors.red,
-		},
+			icon = {
+				font = { family = settings.font.numbers },
+				string = i,
+				padding_left = 15,
+				padding_right = 8,
+				color = colors.white,
+				highlight_color = colors.red,
+			},
 		label = {
 			padding_right = 20,
 			color = colors.lgrey,
@@ -31,8 +31,8 @@ for i = 1, 10, 1 do
 		},
 		popup = {
 			background = {
-				border_width = 4,
-				border_color = colors.glass.border_off,
+				border_width = 1,
+				border_color = colors.popup.border,
 				corner_radius = 12,
 			},
 		},
