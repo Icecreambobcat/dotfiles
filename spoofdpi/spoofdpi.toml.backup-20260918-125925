@@ -1,0 +1,31 @@
+# Standard SpoofDPI configuration
+# Documentation: https://spoofdpi.dev/user-guide/overview/
+
+[app]
+mode = "http"
+listen-addr = "127.0.0.1:8080"
+log-level = "info"
+no-tui = true
+auto-configure-network = true
+
+[connection]
+dns-timeout = 5000
+tcp-timeout = 10000
+udp-idle-timeout = 25000
+default-fake-ttl = 8
+
+[dns]
+mode = "https"
+https-url = "https://cloudflare-dns.com/dns-query"
+qtype = "all"
+cache = true
+
+[https]
+split-mode = "sni"
+disorder = false
+fake-count = 0
+skip = false
+
+[udp]
+fake-count = 0
+skip = false

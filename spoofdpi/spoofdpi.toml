@@ -1,57 +1,49 @@
-[https]
-skip = true
+# Aggressive SpoofDPI configuration for restrictive/adversarial networks
+# Documentation: https://spoofdpi.dev/user-guide/overview/
+#
+# This profile prioritises censorship resistance over compatibility and latency.
+# If a site fails, restore the timestamped backup or reduce fake-count first.
+
+[app]
+mode = "http"
+listen-addr = "127.0.0.1:8080"
+log-level = "info"
+no-tui = true
+auto-configure-network = true
+
+[connection]
+dns-timeout = 10000
+tcp-timeout = 20000
+udp-idle-timeout = 25000
+default-fake-ttl = 8
 
 [dns]
+mode = "https"
+# Using the resolver IP avoids depending on potentially poisoned system DNS
+# to bootstrap the DoH connection.
+https-url = "https://1.1.1.1/dns-query"
+qtype = "all"
 cache = true
 
-[[policy.overrides]]
-match = {
-    domain = [
-        # Discord
-        "**.discord.*",
-        "**.discordapp.*",
-        "**.discordcdn.com",
-        "**.discordstatus.com",
-        "**.dis.gd",
+[https]
+# Split every TLS ClientHello into one-byte chunks and send fragments out
+# of order. Fake packets are disabled because the current default route has
+# no resolvable gateway MAC (SpoofDPI cannot start fake-packet mode on it).
+split-mode = "chunk"
+chunk-size = 1
+disorder = true
+fake-count = 0
+skip = false
 
-        # Youtube
-        "**.youtube.**",
-        "**.ggpht.*",
-        "**.googlevideo.com",
-        "**.wide-youtube.l.google.com",
-        "**.withyoutube.com",
-        "**.youtu.be",
-        "**.youtube-nocookie.com",
-        "**.youtube-ui.l.google.com",
-        "**.youtube.googleapis.com",
-        "**.youtubeeducation.com",
-        "**.youtubeembeddedplayer.googleapis.com",
-        "**.youtubefanfest.com",
-        "**.youtubegaming.com",
-        "**.youtubego.**",
-        "**.youtubei.googleapis.com",
-        "**.youtubekids.com",
-        "**.youtubemobilesupport.com",
-        "**.yt.be",
-        "**.ytimg.com",
-    ],
-}
-https = { fake-count = 7, disorder = true, split-mode = "chunk" }
-dns = { 
-    mode = "https", 
-    https-url = "https://cloudflare-dns.com/dns-query", 
-}
+[udp]
+fake-count = 0
+skip = false
 
-[[policy.overrides]]
-match = {
-    domain = [
-        "localhost",
-    ],
-    addr = [
-        { cidr = "192.168.0.0/16", port = "all" },
-        { cidr = "172.16.0.0/12", port = "all" },
-        { cidr = "10.0.0.0/8", port = "all" },
-    ],
-}
-https = { skip = true }
+# Do not apply packet manipulation to localhost or private address space.
+[[rules]]
+name = "local networks"
+priority = 100
+match = { domains = ["localhost"], cidrs = ["127.0.0.0/8", "::1/128", "10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16", "169.254.0.0/16", "fc00::/7", "fe80::/10"] }
 dns = { mode = "system" }
+https = { skip = true }
+udp = { skip = true }
