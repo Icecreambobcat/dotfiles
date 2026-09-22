@@ -669,36 +669,36 @@ return {
       },
     },
   },
-  {
-    "sphamba/smear-cursor.nvim",
-    opts = {
-      -- cursor_color = "#0cfade",
-      cursor_color = "#ff8800",
-      gamma = 1,
-      stiffness = 0.8,
-      trailing_stiffness = 0.4,
-      trailing_exponent = 5,
-      slowdown_exponent = 0.1,
-      stiffness_insert_mode = 0.8,
-      trailing_stiffness_insert_mode = 0.6,
-      trailing_exponent_insert_mode = 4,
-      damping_insert_mode = 0.8,
-      max_length = 40,
-      time_interval = 15,
-      damping = 0.8,
-      smear_to_cmd = false,
-    },
-    keys = {
-      {
-        "<leader>st",
-        mode = { "n" },
-        function()
-          require("smear_cursor").toggle()
-        end,
-      },
-    },
-    event = "VeryLazy",
-  },
+  -- {
+  --   "sphamba/smear-cursor.nvim",
+  --   opts = {
+  --     -- cursor_color = "#0cfade",
+  --     cursor_color = "#ff8800",
+  --     gamma = 1,
+  --     stiffness = 0.8,
+  --     trailing_stiffness = 0.4,
+  --     trailing_exponent = 5,
+  --     slowdown_exponent = 0.1,
+  --     stiffness_insert_mode = 0.8,
+  --     trailing_stiffness_insert_mode = 0.6,
+  --     trailing_exponent_insert_mode = 4,
+  --     damping_insert_mode = 0.8,
+  --     max_length = 40,
+  --     time_interval = 15,
+  --     damping = 0.8,
+  --     smear_to_cmd = false,
+  --   },
+  --   keys = {
+  --     {
+  --       "<leader>st",
+  --       mode = { "n" },
+  --       function()
+  --         require("smear_cursor").toggle()
+  --       end,
+  --     },
+  --   },
+  --   event = "VeryLazy",
+  -- },
   {
     "karb94/neoscroll.nvim",
     event = "VeryLazy",
