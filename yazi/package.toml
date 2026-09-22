@@ -1,36 +1,36 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "3f2b882"
-hash = "7b625412411be411153886894d9acaf"
+rev = "f703392"
+hash = "f281261ff04ad7ec867c3f802a50835f"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-filter"
-rev = "3f2b882"
+rev = "f703392"
 hash = "d6f7351ea25a43c9b5f4315fa1e23935"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mount"
-rev = "3f2b882"
-hash = "46cbdc05596a3ecd730b288e28c7079d"
+rev = "f703392"
+hash = "b95f898e6dc60b52edbc415952e14395"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "3f2b882"
-hash = "5b1c276b75cae91cbbdbe7863f39a540"
+rev = "f703392"
+hash = "87472b05a8c420100f6a2b9cde1e7746"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "3f2b882"
-hash = "336548d9f67926e12d5584f60b790f1"
+rev = "f703392"
+hash = "347cc6b190eb0c2fd60513cc7ae37412"
 
 [[plugin.deps]]
 use = "KKV9/compress"
-rev = "e60e122"
-hash = "fbaf0adc8efc59555b748d36aab62d40"
+rev = "80e5268"
+hash = "868db729374b97871bc30b96d0e9061f"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "be0b21d"
+rev = "20b47bf"
 hash = "ce320f877fe709b189433941aba747c4"
 
 [[flavor.deps]]
