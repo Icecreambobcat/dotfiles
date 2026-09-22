@@ -20,7 +20,6 @@ zstyle :omz:plugins:ssh-agent lazy yes
 zstyle :omz:plugins:ssh-agent ssh-add-args --apple-load-keychain
 
 ENABLE_CORRECTION="false"
-ZSH_COMPDUMP="$ZSH_CACHE_DIR/.zcompdump"
 HIST_STAMPS="dd.mm.yyyy"
 
 plugins=(
@@ -48,21 +47,23 @@ plugins=(
     cp
     docker-compose
     docker
-    fzf
     gitignore
     gpg-agent
     rust
     xcode
 )
 
-source $ZSH/oh-my-zsh.sh
+# Register custom completions before Oh My Zsh runs compinit.
+fpath+=("$HOME/.config/zsh/comps")
 
-# fzf must be loaded before comps
+# Export picker settings before plugins (including zoxide) initialise.
+source "$HOME/.config/zsh/fzf.zsh"
+source "$ZSH/oh-my-zsh.sh"
+
+# Load the FZF integration once, before fzf-tab.
 source <(fzf --zsh)
 
-# Load other comps
-fpath+=~/.config/zsh/comps
-
+# Load other completions.
 eval "$(bdcli completion zsh)"
 
 # load PROS completions
@@ -101,7 +102,7 @@ unset COLOURS
 unset FZF_TAB_GROUP_COLORS
 
 # Autosuggestions and config items
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source "${HOMEBREW_PREFIX:-/opt/homebrew}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 ZSH_AUTOSUGGEST_STRATEGY=(
     history
     completion
@@ -118,10 +119,12 @@ VI_MODE_SET_CURSOR=true
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 _opacity_hack() {
-    if [ -n "$KITTY_WINDOW_ID" ]; then
+    if [[ -n $KITTY_WINDOW_ID ]]; then
+        local rc=0
         kitten @ set-background-opacity 1.0
-        command "$@"
+        command "$@" || rc=$?
         kitten @ set-background-opacity 0.925
+        return $rc
     else
         command "$@"
     fi
@@ -182,25 +185,8 @@ w () {
     ~/.config/zsh/scripts/fzf.zsh "$@"
 }
 
-yabai_upgrade() {
-    print -u2 "yabai_upgrade is disabled while the local yabai installation is active."
-    print -u2 "Use yabai_local_rollback once upstream supports macOS 27."
-    return 1
-
-    # yabai --stop-service
-    # yabai --uninstall-service
-    # sudo yabai --uninstall-sa
-    # sudo /opt/homebrew/bin/tccutil -r $(realpath $(which yabai))
-    # brew unpin yabai
-    # brew reinstall asmvik/formulae/yabai
-    # brew pin yabai
-    # codesign -fs "${YABAI_CERT:-yabai-cert}" "$(brew --prefix yabai)/bin/yabai"
-    # echo "$(whoami) ALL=(root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | cut -d " " -f 1) $(which yabai) --load-sa" | sudo tee /private/etc/sudoers.d/yabai
-    # sudo /opt/homebrew/bin/tccutil -i $(realpath $(which yabai))
-    # sudo /opt/homebrew/bin/tccutil -e $(realpath $(which yabai))
-    # launchctl stop com.apple.tccd && sudo launchctl kickstart -k system/com.apple.tccd.system
-    # yabai --start-service
-}
+# Yabai maintenance helpers (definitions only).
+source "$HOME/.config/zsh/yabai.zsh"
 
 y () {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -225,9 +211,10 @@ zpipe () {
 }
 
 gitnr () {
-    if [[ $1 == 'create' && 'git rev-parse --is-inside-work-tree >/dev/null 2>&1' ]]; then
+    if [[ $1 == create ]] &&
+       [[ $(git rev-parse --is-inside-work-tree 2>/dev/null) == true ]]; then
         shift
-        command gitnr create "$@" -f $(git rev-parse --show-toplevel)/.gitignore
+        command gitnr create "$@" -f "$(git rev-parse --show-toplevel)/.gitignore"
     elif [[ $# == 0 ]]; then
         command gitnr -h
     else
@@ -237,119 +224,3 @@ gitnr () {
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-autopair/autopair.zsh
-
-yabai_local_migrate() {
-    emulate -L zsh
-    setopt err_return pipe_fail
-
-    local repo="$HOME/Documents/Projects/yabai"
-    local target="/opt/homebrew/bin/yabai"
-    local tccutil="/opt/homebrew/bin/tccutil"
-    local cert="${YABAI_CERT:-yabai-cert}"
-    local old_binary
-
-    cd "$repo" || return 1
-
-    [[ "$(git branch --show-current)" == "macos27compat" ]] || {
-        print -u2 "error: expected branch macos27compat"
-        return 1
-    }
-
-    [[ -z "$(git status --porcelain)" ]] || {
-        print -u2 "error: repository has uncommitted changes"
-        return 1
-    }
-
-    security find-identity -v -p codesigning |
-        grep -F "\"$cert\"" >/dev/null || {
-            print -u2 "error: valid code-signing identity '$cert' not found"
-            return 1
-        }
-
-    old_binary="$(realpath "$(command -v yabai)")" || return 1
-
-    print "Migrating from:"
-    print "  $old_binary"
-    print "Installing local commit:"
-    git log -1 --oneline
-
-    make install-local YABAI_CERT="$cert" || return 1
-
-    sudo "$tccutil" -r "$old_binary"
-    sudo "$tccutil" -i "$target"
-    sudo "$tccutil" -e "$target"
-
-    launchctl stop com.apple.tccd 2>/dev/null || true
-    sudo launchctl kickstart -k system/com.apple.tccd.system
-
-    "$target" --restart-service
-
-    print
-    print "Local yabai migration complete:"
-    ls -l "$target"
-    codesign -dvv "$target" 2>&1 |
-        grep -E 'Identifier=|Authority=|Signature='
-    plutil -extract CFBundleVersion raw \
-        /Library/ScriptingAdditions/yabai.osax/Contents/Info.plist
-    launchctl print "gui/$UID/com.asmvik.yabai" |
-        grep -E 'state =|program =|pid ='
-}
-
-yabai_local_rollback() {
-    emulate -L zsh
-    setopt err_return pipe_fail
-
-    local repo="$HOME/Documents/Projects/yabai"
-    local target="/opt/homebrew/bin/yabai"
-    local tccutil="/opt/homebrew/bin/tccutil"
-    local formula="asmvik/formulae/yabai"
-    local cert="${YABAI_CERT:-yabai-cert}"
-    local brew_binary hash
-
-    cd "$repo" || return 1
-
-    security find-identity -v -p codesigning |
-        grep -F "\"$cert\"" >/dev/null || {
-            print -u2 "error: valid code-signing identity '$cert' not found"
-            return 1
-        }
-
-    make uninstall-local || return 1
-
-    sudo "$tccutil" -r "$target"
-
-    brew unpin yabai 2>/dev/null || true
-    brew reinstall "$formula"
-    brew pin yabai
-
-    codesign -fs "$cert" "$(brew --prefix yabai)/bin/yabai"
-
-    brew_binary="$(realpath "$(command -v yabai)")" || return 1
-    hash="$(shasum -a 256 "$target" | awk '{print $1}')"
-
-    printf '%s ALL=(root) NOPASSWD: sha256:%s %s --load-sa\n' \
-        "$USER" "$hash" "$target" |
-        sudo tee /private/etc/sudoers.d/yabai >/dev/null
-
-    sudo chmod 0440 /private/etc/sudoers.d/yabai
-    sudo visudo -cf /private/etc/sudoers.d/yabai
-
-    sudo "$tccutil" -i "$brew_binary"
-    sudo "$tccutil" -e "$brew_binary"
-
-    launchctl stop com.apple.tccd 2>/dev/null || true
-    sudo launchctl kickstart -k system/com.apple.tccd.system
-
-    sudo "$target" --load-sa
-    "$target" --start-service
-
-    print
-    print "Homebrew yabai restored:"
-    print "  executable: $target"
-    print "  resolved:   $brew_binary"
-    yabai --version
-    codesign -dvv "$target" 2>&1 |
-        grep -E 'Identifier=|Authority=|Signature='
-    launchctl print "gui/$UID/com.asmvik.yabai" |
-        grep -E 'state =|program =|pid ='
-}
