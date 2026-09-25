@@ -23,6 +23,8 @@ brew "btop"
 brew "xz"
 # Zstandard is a real-time compression algorithm
 brew "zstd"
+# Image format providing lossless and lossy compression for web images
+brew "webp"
 # Versatile and fast Unicode/ASCII/ANSI graphics renderer
 brew "chafa"
 # Open-source, cross-platform JavaScript runtime environment
