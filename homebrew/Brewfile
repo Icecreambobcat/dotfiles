@@ -314,6 +314,8 @@ cask "steam"
 cask "tor-browser"
 # Open-source code editor
 cask "visual-studio-code"
+# Menu bar toolkit with keep-awake, system monitor and volume mixer
+cask "vorssaint"
 # Network protocol analyzer
 cask "wireshark-app"
 uv "garmin-mcp", source: "git+https://github.com/Taxuspt/garmin_mcp"
