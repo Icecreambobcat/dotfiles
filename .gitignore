@@ -11,3 +11,4 @@ wireshark
 .wrangler/*
 !.wrangler/preferences.json
 rclone
+mole
