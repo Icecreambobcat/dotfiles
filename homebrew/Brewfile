@@ -274,12 +274,8 @@ cask "lm-studio-bionic"
 cask "logi-options+"
 # File system integration
 cask "macfuse"
-# Controls and monitors all fans on Apple computers
-cask "macs-fan-control"
 # Full TeX Live distribution with GUI applications
 cask "mactex"
-# Smooths scrolling and set mouse scroll directions independently
-cask "mos@beta"
 # App to write, plan, collaborate, and get organised
 cask "notion"
 # Knowledge base that works on top of a local folder of plain text Markdown files
