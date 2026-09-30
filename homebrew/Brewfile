@@ -111,6 +111,8 @@ brew "openjdk"
 brew "maven"
 # Unified display of technical and tag data for audio/video
 brew "media-info"
+# Deep clean and optimize your Mac
+brew "mole"
 # Feature-rich command-line audio/video downloader
 brew "yt-dlp"
 # Media player based on MPlayer and mplayer2
