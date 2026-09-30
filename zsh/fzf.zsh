@@ -1,7 +1,7 @@
 # Interactive FZF and zoxide picker settings; source before Oh My Zsh.
 
 # Shared fd arguments keep all four picker modes consistent.
-typeset _fzf_fd='fd --strip-cwd-prefix --follow --exclude .git --exclude Library --exclude Sikarugir'
+typeset _fzf_fd='fd --strip-cwd-prefix --follow --exclude .git --exclude Library --exclude Applications'
 
 export FZF_ALL_NORMAL="$_fzf_fd"
 export FZF_ALL_HIDDEN="$_fzf_fd --hidden"
@@ -14,7 +14,7 @@ export FZF_DEFAULT_COMMAND="$FZF_ALL_NORMAL"
 export FZF_CTRL_T_COMMAND="$FZF_ALL_NORMAL"
 export FZF_ALT_C_COMMAND="$FZF_DIRS_NORMAL"
 
-export FZF_COMPLETION_OPTS='--border=none --info=inline-right --walker-skip .git,Library,Sikarugir --prompt="> " --bind "ctrl-h:ignore"'
+export FZF_COMPLETION_OPTS='--border=none --info=inline-right --walker-skip .git,Library,Applications --prompt="> " --bind "ctrl-h:ignore"'
 export FZF_COMPLETION_PATH_OPTS='--walker file,dir,follow,hidden'
 export FZF_COMPLETION_DIR_OPTS='--walker dir,follow'
 
