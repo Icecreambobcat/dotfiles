@@ -8,14 +8,14 @@ local spaces = {}
 for i = 1, 10, 1 do
 	local space = sbar.add("space", "space." .. i, {
 		space = i,
-			icon = {
-				font = { family = settings.font.numbers },
-				string = i,
-				padding_left = 15,
-				padding_right = 8,
-				color = colors.white,
-				highlight_color = colors.red,
-			},
+		icon = {
+			font = { family = settings.font.numbers },
+			string = i,
+			padding_left = 15,
+			padding_right = 8,
+			color = colors.white,
+			highlight_color = colors.red,
+		},
 		label = {
 			padding_right = 20,
 			color = colors.lgrey,
@@ -58,18 +58,38 @@ for i = 1, 10, 1 do
 		width = settings.group_paddings,
 	})
 
+	local image_scale = 0.2
+
 	local space_popup = sbar.add("item", {
 		position = "popup." .. space.name,
-		padding_left = 4,
-		padding_right = 0,
+		padding = 4,
 		background = {
 			drawing = true,
 			image = {
 				corner_radius = 10,
-				scale = 0.2,
+				scale = image_scale,
 			},
 		},
 	})
+
+	local function update_height()
+		sbar.exec(
+			[[swift -e 'import AppKit; let screen = NSScreen.main!; print(Int(screen.frame.height * screen.backingScaleFactor))']],
+			function(output)
+				local pixel_height = tonumber(output)
+				if pixel_height then
+					space_popup:set({
+						background = {
+							height = math.floor(pixel_height * image_scale + 8 + 0.5),
+						},
+					})
+				end
+			end
+		)
+	end
+
+	update_height()
+	space_popup:subscribe("display_change", update_height)
 
 	space:subscribe("space_change", function(env)
 		local selected = env.SELECTED == "true"
@@ -125,8 +145,8 @@ local spaces_indicator = sbar.add("item", {
 	},
 	background = {
 		color = colors.with_alpha(colors.glass.bg, 0.0),
-    border_color = colors.with_alpha(colors.glass.border_off, 0.0),
-    border_width = 1,
+		border_color = colors.with_alpha(colors.glass.border_off, 0.0),
+		border_width = 1,
 	},
 })
 
@@ -151,18 +171,19 @@ end)
 spaces_indicator:subscribe("swap_menus_and_spaces", function(env)
 	local currently_on = spaces_indicator:query().icon.value == icons.switch.on
 	spaces_indicator:set({
-		icon = currently_on and icons.switch.off or icons.switch.on, label = currently_on and "Menus" or "Spaces",
+		icon = currently_on and icons.switch.off or icons.switch.on,
+		label = currently_on and "Menus" or "Spaces",
 	})
 end)
 
 spaces_indicator:subscribe("mouse.entered", function(env)
 	sbar.animate("tanh", 30, function()
 		spaces_indicator:set({
-      padding_left = 0,
-      padding_right = 0,
+			padding_left = 0,
+			padding_right = 0,
 			background = {
 				color = colors.glass.bg,
-        border_color = colors.glass.border_off,
+				border_color = colors.glass.border_off,
 			},
 			icon = { color = colors.white },
 			label = { width = "dynamic" },
@@ -173,11 +194,11 @@ end)
 spaces_indicator:subscribe("mouse.exited", function(env)
 	sbar.animate("tanh", 30, function()
 		spaces_indicator:set({
-      padding_left = -3,
-      padding_right = -3,
+			padding_left = -3,
+			padding_right = -3,
 			background = {
 				color = colors.with_alpha(colors.glass.bg, 0.0),
-        border_color = colors.with_alpha(colors.glass.border_off, 0.0),
+				border_color = colors.with_alpha(colors.glass.border_off, 0.0),
 			},
 			icon = { color = colors.lgrey },
 			label = { width = 0 },
