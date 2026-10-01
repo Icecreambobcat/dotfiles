@@ -274,6 +274,8 @@ cask "lm-studio-bionic"
 cask "logi-options+"
 # File system integration
 cask "macfuse"
+# Controls and monitors all fans on Apple computers
+cask "macs-fan-control"
 # Full TeX Live distribution with GUI applications
 cask "mactex"
 # App to write, plan, collaborate, and get organised
