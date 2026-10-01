@@ -1,6 +1,17 @@
-os.execute(
-	"[ ! -d $HOME/.local/share/sketchybar_lua/ ] && (git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/)"
-)
+os.execute([[
+  if [ ! -d "$HOME/.local/share/sketchybar_lua/" ]; then
+    (
+      workdir=$(mktemp -d "${TMPDIR:-/tmp}/sketchybar-sbarlua.XXXXXXXX") || exit 1
+      trap 'rm -rf -- "$workdir"' 0
+      trap 'exit 129' HUP
+      trap 'exit 130' INT
+      trap 'exit 143' TERM
+      git clone https://github.com/FelixKratz/SbarLua.git "$workdir/source" &&
+        cd "$workdir/source" &&
+        make install
+    )
+  fi
+]])
 local HOME = os.getenv("HOME")
 package.cpath = package.cpath .. ";" .. HOME .. "/.local/share/sketchybar_lua/?.so"
 
