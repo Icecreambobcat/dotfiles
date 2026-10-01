@@ -71,25 +71,29 @@ for i = 1, 10, 1 do
 			},
 		},
 	})
+		local popup_requested = false
+		local popup_revision = 0
 
-	local function update_height()
+		local function update_height()
+			local revision = popup_revision
+
 		sbar.exec(
 			[[swift -e 'import AppKit; let screen = NSScreen.main!; print(Int(screen.frame.height * screen.backingScaleFactor))']],
 			function(output)
 				local pixel_height = tonumber(output)
-				if pixel_height then
+									if not popup_requested or revision ~= popup_revision then return end
+					if pixel_height then
+
 					space_popup:set({
 						background = {
-							height = math.floor(pixel_height * image_scale + 8 + 0.5),
+							height = math.floor(pixel_height * image_scale + 4 + 0.5),
 						},
 					})
+					end
+					space:set({ popup = { drawing = true } })
 				end
-			end
-		)
-	end
-
-	update_height()
-	space_popup:subscribe("display_change", update_height)
+			)
+		end
 
 	space:subscribe("space_change", function(env)
 		local selected = env.SELECTED == "true"
@@ -109,16 +113,24 @@ for i = 1, 10, 1 do
 
 	space:subscribe("mouse.clicked", function(env)
 		if env.BUTTON == "other" then
-			space_popup:set({ background = { image = "space." .. env.SID } })
-			space:set({ popup = { drawing = "toggle" } })
+				popup_requested = not popup_requested
+				popup_revision = popup_revision + 1
+				if popup_requested then
+					space_popup:set({ background = { image = "space." .. env.SID } })
+					update_height()
+				else
+					space:set({ popup = { drawing = false } })
+				end
 		else
 			local op = (env.BUTTON == "right") and "--destroy" or "--focus"
 			sbar.exec("yabai -m space " .. op .. " " .. env.SID)
 		end
 	end)
 
-	space:subscribe("mouse.exited", function(_)
-		space:set({ popup = { drawing = false } })
+		space:subscribe("mouse.exited", function(_)
+			popup_requested = false
+			popup_revision = popup_revision + 1
+			space:set({ popup = { drawing = false } })
 	end)
 end
 
