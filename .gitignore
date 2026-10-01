@@ -12,3 +12,12 @@ wireshark
 !.wrangler/preferences.json
 rclone
 mole
+
+# Generated Python files
+__pycache__/
+*.py[cod]
+
+# Local authentication state and Kitty remote-control secret
+/gh/hosts.yml
+/kitty/rc-pass
+/kitty/remote-control.local.conf
