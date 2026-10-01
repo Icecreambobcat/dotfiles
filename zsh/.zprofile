@@ -6,10 +6,11 @@ typeset -U path PATH
 path=(
     /opt/homebrew/opt/imagemagick-full/bin
     /opt/homebrew/opt/ffmpeg-full/bin
+    /opt/homebrew/opt/rustup/bin
+    "$HOME/.cargo/bin"
     /opt/homebrew/bin
     /opt/homebrew/sbin
     /opt/homebrew/opt/make/libexec/gnubin
-    /opt/homebrew/opt/rustup/bin
     /opt/homebrew/opt/llvm/bin
     /opt/homebrew/opt/sqlite/bin
     /opt/homebrew/opt/arm-gcc-bin@15/bin
