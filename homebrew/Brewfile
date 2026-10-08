@@ -181,8 +181,6 @@ brew "unar"
 brew "uv"
 # Internet file retriever
 brew "wget"
-# Access X11 clipboards from the command-line
-brew "xclip"
 # Command-line program for getting and setting the contents of the X selection
 brew "xsel"
 # Blazing fast terminal file manager written in Rust, based on async I/O
@@ -287,7 +285,7 @@ cask "onyx"
 # Android file transfer
 cask "openmtp"
 # Rhythm game
-cask "osu"
+cask "osu@tachyon"
 # Utility to uninstall apps and remove leftover files from old/uninstalled apps
 cask "pearcleaner"
 # VPN client focusing on security
