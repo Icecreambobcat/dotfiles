@@ -9,10 +9,10 @@ tap "osx-cross/arm", trusted: true
 tap "sikarugir-app/sikarugir", "https://github.com/Sikarugir-App/homebrew-sikarugir", trusted: true
 # Library for command-line editing
 brew "readline"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
 # C library of Git core methods that is re-entrant and linkable
 brew "libgit2"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Generate compilation database for clang tooling
