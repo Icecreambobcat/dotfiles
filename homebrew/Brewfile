@@ -270,6 +270,8 @@ cask "lm-studio"
 cask "lm-studio-bionic"
 # Software for Logitech devices
 cask "logi-options+"
+# Support for Logitech G gear
+cask "logitech-g-hub"
 # File system integration
 cask "macfuse"
 # Controls and monitors all fans on Apple computers
