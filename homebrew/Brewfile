@@ -280,6 +280,8 @@ cask "macs-fan-control"
 cask "mactex"
 # App to write, plan, collaborate, and get organised
 cask "notion"
+# Open-source software for live streaming and screen recording
+cask "obs@beta", args: { appdir: "/Applications" }
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Verify system files structure, run miscellaneous maintenance and more
