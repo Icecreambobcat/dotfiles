@@ -1,5 +1,8 @@
 {
   "view_type": "Sparkline",
-  "color": "Reset",
-  "interval": 1000
+  "interval": 1000,
+  "ratio_mode": "Scaled",
+  "show_procs": true,
+  "proc_sort": "Cpu",
+  "proc_sort_desc": true
 }
