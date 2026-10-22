@@ -18,25 +18,25 @@ desc = "Chmod on selected files"
 # archive
 [[mgr.prepend_keymap]]
 on   = [ "c", "a", "a" ]
-run  = "plugin compress"
+run  = "plugin compress ''"
 desc = "Archive selected files"
 
 [[mgr.prepend_keymap]]
 on   = [ "c", "a", "p" ]
-run  = "plugin compress -p"
+run  = "plugin compress '-p 7z'"
 desc = "Archive selected files (password)"
 
 [[mgr.prepend_keymap]]
 on   = [ "c", "a", "h" ]
-run  = "plugin compress -ph"
+run  = "plugin compress '-ph 7z'"
 desc = "Archive selected files (password+header)"
 
 [[mgr.prepend_keymap]]
 on   = [ "c", "a", "l" ]
-run  = "plugin compress -l"
+run  = "plugin compress '-l'"
 desc = "Archive selected files (compression level)"
 
 [[mgr.prepend_keymap]]
 on   = [ "c", "a", "u" ]
-run  = "plugin compress -phl"
+run  = "plugin compress '-phl 7z'"
 desc = "Archive selected files (password+header+level)"
