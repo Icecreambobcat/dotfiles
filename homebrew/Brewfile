@@ -320,6 +320,8 @@ cask "visual-studio-code"
 cask "vorssaint"
 # Network protocol analyzer
 cask "wireshark-app"
+# Gecko based web browser
+cask "zen"
 uv "garmin-mcp", source: "git+https://github.com/Taxuspt/garmin_mcp"
 uv "poetry"
 uv "pros-cli", with: ["setuptools==81"]
