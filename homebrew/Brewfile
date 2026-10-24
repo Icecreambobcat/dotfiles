@@ -113,6 +113,8 @@ brew "openjdk"
 brew "maven"
 # Unified display of technical and tag data for audio/video
 brew "media-info"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.15"
 # Deep clean and optimize your Mac
 brew "mole"
 # Feature-rich command-line audio/video downloader
