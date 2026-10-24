@@ -1,0 +1,3 @@
+[submodule "raycast-skills/avoid-ai-writing"]
+	path = raycast-skills/avoid-ai-writing
+	url = git@github.com:conorbronsdon/avoid-ai-writing.git
