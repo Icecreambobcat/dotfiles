@@ -1,3 +1,9 @@
 [submodule "raycast-skills/avoid-ai-writing"]
 	path = raycast-skills/avoid-ai-writing
 	url = git@github.com:conorbronsdon/avoid-ai-writing.git
+[submodule "raycast-skills/cloudflare"]
+	path = raycast-skills/cloudflare
+	url = git@github.com:cloudflare/skills.git
+[submodule "raycast-skills/anthropic"]
+	path = raycast-skills/anthropic
+	url = git@github.com:anthropics/skills.git
