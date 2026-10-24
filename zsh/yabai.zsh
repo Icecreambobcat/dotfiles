@@ -2,7 +2,8 @@
 
 yabai_upgrade() {
     print -u2 "yabai_upgrade is disabled while the local yabai installation is active."
-    print -u2 "Use yabai_local_rollback once upstream supports macOS 27."
+    print -u2 "Use yabai_local_migrate to update from christian/master."
+    print -u2 "yabai_local_rollback returns to Homebrew, not the previous local build."
     return 1
 
     # yabai --stop-service
@@ -20,61 +21,32 @@ yabai_upgrade() {
     # yabai --start-service
 }
 
+# All operations target the separate christian-sc26 worktree.
+# The original macos27compat checkout is kept for the Homebrew-return helper.
+_yabai_maintenance() {
+    command python3 "$HOME/.config/zsh/scripts/yabai-maintenance.py" "$@"
+}
+
+# Fetch and fast-forward christian/master, then build and sign without activation.
+yabai_local_prepare() {
+    _yabai_maintenance prepare "$@"
+}
+
+# Activate the verified staged build; prompts for sudo before stopping anything.
+# Optional: --refresh-tcc performs the targeted Accessibility refresh.
+yabai_local_install() {
+    _yabai_maintenance install "$@"
+}
+
+# Normal update command: fetch latest, build, sign, then install.
 yabai_local_migrate() {
-    emulate -L zsh
-    setopt err_return pipe_fail
+    _yabai_maintenance update "$@"
+}
 
-    local repo="$HOME/Documents/Projects/yabai"
-    local target="/opt/homebrew/bin/yabai"
-    local tccutil="/opt/homebrew/bin/tccutil"
-    local cert="${YABAI_CERT:-yabai-cert}"
-    local old_binary
-
-    cd "$repo" || return 1
-
-    [[ "$(git branch --show-current)" == "macos27compat" ]] || {
-        print -u2 "error: expected branch macos27compat"
-        return 1
-    }
-
-    [[ -z "$(git status --porcelain)" ]] || {
-        print -u2 "error: repository has uncommitted changes"
-        return 1
-    }
-
-    security find-identity -v -p codesigning |
-        grep -F "\"$cert\"" >/dev/null || {
-            print -u2 "error: valid code-signing identity '$cert' not found"
-            return 1
-        }
-
-    old_binary="$(realpath "$(command -v yabai)")" || return 1
-
-    print "Migrating from:"
-    print "  $old_binary"
-    print "Installing local commit:"
-    git log -1 --oneline
-
-    make install-local YABAI_CERT="$cert" || return 1
-
-    sudo "$tccutil" -r "$old_binary"
-    sudo "$tccutil" -i "$target"
-    sudo "$tccutil" -e "$target"
-
-    launchctl stop com.apple.tccd 2>/dev/null || true
-    sudo launchctl kickstart -k system/com.apple.tccd.system
-
-    "$target" --restart-service
-
-    print
-    print "Local yabai migration complete:"
-    ls -l "$target"
-    codesign -dvv "$target" 2>&1 |
-        grep -E 'Identifier=|Authority=|Signature='
-    plutil -extract CFBundleVersion raw \
-        /Library/ScriptingAdditions/yabai.osax/Contents/Info.plist
-    launchctl print "gui/$UID/com.asmvik.yabai" |
-        grep -E 'state =|program =|pid ='
+# Explicit permission recovery with the third-party tool, not Apple's tccutil.
+# Restart yabai after running this if it was stopped by an Accessibility error.
+yabai_tcc_refresh() {
+    _yabai_maintenance tcc-refresh "$@"
 }
 
 yabai_local_rollback() {
@@ -83,7 +55,6 @@ yabai_local_rollback() {
 
     local repo="$HOME/Documents/Projects/yabai"
     local target="/opt/homebrew/bin/yabai"
-    local tccutil="/opt/homebrew/bin/tccutil"
     local formula="asmvik/formulae/yabai"
     local cert="${YABAI_CERT:-yabai-cert}"
     local brew_binary hash
@@ -98,7 +69,7 @@ yabai_local_rollback() {
 
     make uninstall-local || return 1
 
-    sudo "$tccutil" -r "$target"
+    _yabai_maintenance tcc-remove "$target"
 
     brew unpin yabai 2>/dev/null || true
     brew reinstall "$formula"
@@ -116,11 +87,7 @@ yabai_local_rollback() {
     sudo chmod 0440 /private/etc/sudoers.d/yabai
     sudo visudo -cf /private/etc/sudoers.d/yabai
 
-    sudo "$tccutil" -i "$brew_binary"
-    sudo "$tccutil" -e "$brew_binary"
-
-    launchctl stop com.apple.tccd 2>/dev/null || true
-    sudo launchctl kickstart -k system/com.apple.tccd.system
+    _yabai_maintenance tcc-refresh "$brew_binary"
 
     sudo "$target" --load-sa
     "$target" --start-service
