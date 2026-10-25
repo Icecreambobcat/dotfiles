@@ -11,7 +11,6 @@ wireshark
 .wrangler/*
 !.wrangler/preferences.json
 rclone
-mole
 
 # Generated Python files
 __pycache__/

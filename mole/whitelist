@@ -1,0 +1,23 @@
+# Mole Whitelist - Protected paths won't be deleted
+# Saved selections replace optional defaults; built-in safety protections still apply.
+# Add one pattern per line to keep items safe.
+
+FINDER_METADATA
+/Users/icecreambobcat/.ollama/models/*
+/Users/icecreambobcat/Library/Caches/JetBrains*
+/Users/icecreambobcat/Library/Caches/com.jetbrains.toolbox*
+/Users/icecreambobcat/Library/Application Support/JetBrains*
+/Users/icecreambobcat/Library/Caches/com.apple.finder
+/Users/icecreambobcat/Library/Mobile Documents*
+/Users/icecreambobcat/Library/Caches/tlrc
+
+# Preserve Zsh completion dumps and cached completions, including Homebrew formulae/casks.
+/Users/icecreambobcat/.zcompdump*
+/Users/icecreambobcat/.oh-my-zsh/cache
+
+# Preserve Homebrew API indexes used to rebuild completion lists.
+# Mole also skips its delegated brew cleanup when this child path is protected.
+/Users/icecreambobcat/Library/Caches/Homebrew/api
+
+# Preserve Kitty's image cache directory for running sessions.
+/Users/icecreambobcat/Library/Caches/kitty
