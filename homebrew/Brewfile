@@ -145,10 +145,6 @@ brew "poppler"
 brew "powerlevel10k"
 # Python version management
 brew "pyenv"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.12"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.13"
 # Rsync for cloud storage
 brew "rclone"
 # SVG rendering tool and library
