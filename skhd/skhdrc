@@ -160,3 +160,14 @@ alt - s : yabai -m window --insert south; skhd -k "cmd - n"
 # Scratchpads
 alt - q : yabai -m window --toggle Spotify || open -a Spotify
 alt - w : yabai -m window --toggle Discord || open -a Discord
+
+# Cmd+C: copy and clean line breaks
+cmd - c -> [
+    "Skim" : /bin/sleep 0.2; /usr/bin/pbpaste | /usr/bin/perl -CS -0777 -pe 's/\r\n?/\n/g; s/(?<=\p{L})[-\x{00AD}]\h*\n\h*(?=\p{L})//g; s/(?<!\n)\n(?!\n)/ /g' | /usr/bin/pbcopy
+    * ~
+]
+
+cmd + shift - c [
+    "Skim" | cmd - c
+    * ~
+]
