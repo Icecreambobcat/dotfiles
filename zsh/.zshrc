@@ -130,6 +130,11 @@ _opacity_hack() {
     fi
 }
 
+# Use Kitty's SSH kitten inside Kitty.
+if [[ -n ${KITTY_WINDOW_ID-} ]]; then
+    alias ssh="kitten ssh"
+fi
+
 alias lg="lazygit"
 alias ld="lazydocker"
 alias kd="kdash"
