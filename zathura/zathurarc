@@ -1,0 +1,73 @@
+# macOS defaults for the Homebrew Zathura package.
+set font "monospace 13"
+set adjust-open "width"
+set pages-per-row 1
+set page-v-padding 8
+set page-h-padding 8
+# Keep page-sized keyboard moves readable without wrapping the document.
+set scroll-full-overlap 0.1
+set scroll-page-aware true
+set scroll-wrap false
+
+# Native GTK smooth keyboard scrolling; preserve j/k and numeric counts.
+map <C-Up> scroll smooth-up
+map <C-Down> scroll smooth-down
+
+# Fine zoom steps and no sideways jumps when searching or following links.
+set zoom-center true
+set zoom-step 5
+set incremental-search true
+set search-hadjust false
+set link-zoom false
+set link-hadjust false
+
+# Follow recompiles and preserve reading position if the viewer is interrupted.
+set filemonitor "glib"
+set continuous-hist-save true
+
+# Use the macOS clipboard and leave selected text visibly selected.
+set selection-clipboard "clipboard"
+set selection-keep-highlight true
+set selection-notification false
+set statusbar-basename true
+set window-title-basename true
+set guioptions "s"
+set synctex true
+# VimTeX dispatches inverse search to the originating Neovim instance.
+set synctex-editor-command "/opt/homebrew/bin/nvim --headless -c \"VimtexInverseSearch %{line}:%{column} '%{input}'\""
+
+# Tokyo Night (Night variant).
+# Palette: https://github.com/tokyo-night/tokyo-night-vscode-theme
+set default-bg "#1a1b26"
+set default-fg "#c0caf5"
+set statusbar-bg "#24283b"
+set statusbar-fg "#a9b1d6"
+set inputbar-bg "#24283b"
+set inputbar-fg "#c0caf5"
+
+set completion-bg "#24283b"
+set completion-fg "#c0caf5"
+set completion-group-bg "#1a1b26"
+set completion-group-fg "#7aa2f7"
+set completion-highlight-bg "#7aa2f7"
+set completion-highlight-fg "#1a1b26"
+
+set notification-bg "#24283b"
+set notification-fg "#c0caf5"
+set notification-error-bg "#f7768e"
+set notification-error-fg "#1a1b26"
+set notification-warning-bg "#e0af68"
+set notification-warning-fg "#1a1b26"
+
+set index-bg "#1a1b26"
+set index-fg "#c0caf5"
+set index-active-bg "#7aa2f7"
+set index-active-fg "#1a1b26"
+set highlight-color "rgba(224,175,104,0.35)"
+set highlight-active-color "rgba(122,162,247,0.45)"
+set highlight-fg "#1a1b26"
+
+# Preserve original document colours; theme only the surrounding UI.
+set recolor false
+set render-loading-bg "#1a1b26"
+set render-loading-fg "#c0caf5"
