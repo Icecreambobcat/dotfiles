@@ -133,6 +133,8 @@ brew "numpy"
 brew "ollama"
 # Password manager
 brew "pass"
+# Highly capable, feature-rich programming language
+brew "perl"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
 # Animated pipes terminal screensaver
@@ -145,6 +147,8 @@ brew "poppler"
 brew "powerlevel10k"
 # Python version management
 brew "pyenv"
+# Interpreted, interactive, object-oriented programming language
+brew "python-freethreading"
 # Rsync for cloud storage
 brew "rclone"
 # SVG rendering tool and library
