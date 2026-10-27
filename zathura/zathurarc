@@ -67,7 +67,10 @@ set highlight-color "rgba(224,175,104,0.35)"
 set highlight-active-color "rgba(122,162,247,0.45)"
 set highlight-fg "#1a1b26"
 
-# Preserve original document colours; theme only the surrounding UI.
+# Start with original document colours; i toggles Tokyo Night recolouring.
 set recolor false
+set recolor-darkcolor "#c0caf5"
+set recolor-lightcolor "#1a1b26"
+map i recolor
 set render-loading-bg "#1a1b26"
 set render-loading-fg "#c0caf5"
