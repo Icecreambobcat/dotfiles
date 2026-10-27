@@ -185,8 +185,6 @@ brew "unar"
 brew "uv"
 # Internet file retriever
 brew "wget"
-# Command-line program for getting and setting the contents of the X selection
-brew "xsel"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature
