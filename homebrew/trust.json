@@ -12,8 +12,13 @@
   "trustedformulae": [
     "anomalyco/tap/opencode",
     "asmvik/formulae/yabai",
+    "icecreambobcat/personal/synctex",
     "icecreambobcat/personal/zathura",
-    "icecreambobcat/personal/zathura-core"
+    "icecreambobcat/personal/zathura-cb",
+    "icecreambobcat/personal/zathura-core",
+    "icecreambobcat/personal/zathura-djvu",
+    "icecreambobcat/personal/zathura-pdf-mupdf",
+    "icecreambobcat/personal/zathura-ps"
   ],
   "trustedcasks": [
     "betterdiscord/tap/bdcli",

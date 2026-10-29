@@ -33,8 +33,6 @@ set statusbar-basename true
 set window-title-basename true
 set guioptions "s"
 set synctex true
-# VimTeX dispatches inverse search to the originating Neovim instance.
-set synctex-editor-command "/opt/homebrew/bin/nvim --headless -c \"VimtexInverseSearch %{line}:%{column} '%{input}'\""
 
 # Tokyo Night (Night variant).
 # Palette: https://github.com/tokyo-night/tokyo-night-vscode-theme
