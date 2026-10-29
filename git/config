@@ -10,9 +10,6 @@
 	defaultBranch = main
 [core]
 	excludesfile = /Users/icecreambobcat/.config/git/ignore
-	preloadIndex = true
-	commitGraph = true
-	fsmonitor = true
 [credential "https://github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
