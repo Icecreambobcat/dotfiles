@@ -1,6 +1,5 @@
 {
   "trustedtaps": [
-    "asmvik/formulae",
     "felixkratz/formulae",
     "gittower/tap",
     "icecreambobcat/personal",
@@ -11,7 +10,7 @@
   ],
   "trustedformulae": [
     "anomalyco/tap/opencode",
-    "asmvik/formulae/yabai",
+    "christian-sc26/formulae/yabai",
     "icecreambobcat/personal/synctex",
     "icecreambobcat/personal/zathura",
     "icecreambobcat/personal/zathura-cb",
