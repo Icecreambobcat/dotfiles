@@ -1,16 +1,6 @@
 local config = vim.g
 
-config.vimtex_view_method = "zathura_simple"
-
-vim.api.nvim_create_autocmd("User", {
-  pattern = "VimtexEventViewReverse",
-  callback = function()
-    local window_id = vim.env.WINDOWID
-    if window_id and window_id:match("^%d+$") then
-      vim.fn.jobstart({ "/opt/homebrew/bin/yabai", "-m", "window", "--focus", window_id })
-    end
-  end,
-})
+config.vimtex_view_method = "skim"
 config.vimtex_mappings_prefix = "<leader>l"
 config.tex_flavor = "latex"
 config.vimtex_quickfix_mode = 2

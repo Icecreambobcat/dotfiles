@@ -1,9 +1,8 @@
 tap "anomalyco/tap"
-tap "christian-sc26/formulae"
 tap "betterdiscord/tap"
+tap "christian-sc26/formulae", "https://github.com/Christian-SC26/homebrew-formulae.git"
 tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
 tap "gittower/tap", trusted: true
-tap "icecreambobcat/personal", "https://github.com/Icecreambobcat/homebrew-personal.git", trusted: true
 tap "jackielii/tap", trusted: true
 tap "kdash-rs/kdash", trusted: true
 tap "osx-cross/arm", trusted: true
@@ -218,20 +217,6 @@ brew "felixkratz/formulae/borders", args: ["HEAD"]
 brew "felixkratz/formulae/sketchybar", args: ["HEAD"]
 # Next-generation Git Flow tool
 brew "gittower/tap/git-flow-next"
-# TeX synchronisation parser with corrected API metadata
-brew "icecreambobcat/personal/synctex", trusted: true
-# Comic book archive plugin for Zathura
-brew "icecreambobcat/personal/zathura-cb", trusted: true
-# GTK 4 document viewer and plugin development headers
-brew "icecreambobcat/personal/zathura-core", trusted: true
-# DjVu document plugin for Zathura
-brew "icecreambobcat/personal/zathura-djvu", trusted: true
-# MuPDF document plugin for Zathura
-brew "icecreambobcat/personal/zathura-pdf-mupdf", trusted: true
-# PostScript document plugin for Zathura
-brew "icecreambobcat/personal/zathura-ps", trusted: true
-# GTK 4 Zathura app with MuPDF, DjVu, PostScript and comic plugins
-brew "icecreambobcat/personal/zathura", trusted: true
 # A fast and simple dashboard for Kubernetes written in Rust
 brew "kdash-rs/kdash/kdash"
 # Pre-built GNU toolchain for Arm Cortex-M and Cortex-R processors
