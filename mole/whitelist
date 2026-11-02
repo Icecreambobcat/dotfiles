@@ -18,6 +18,3 @@ FINDER_METADATA
 # Preserve Homebrew API indexes used to rebuild completion lists.
 # Mole also skips its delegated brew cleanup when this child path is protected.
 /Users/icecreambobcat/Library/Caches/Homebrew/api
-
-# Preserve Kitty's image cache directory for running sessions.
-/Users/icecreambobcat/Library/Caches/kitty
