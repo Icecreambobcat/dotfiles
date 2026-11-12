@@ -11,6 +11,7 @@
   "trustedformulae": [
     "anomalyco/tap/opencode",
     "christian-sc26/formulae/yabai",
+    "gromgit/fuse/sshfs-mac",
     "icecreambobcat/personal/synctex",
     "icecreambobcat/personal/zathura",
     "icecreambobcat/personal/zathura-cb",

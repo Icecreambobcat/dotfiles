@@ -3,6 +3,7 @@ tap "betterdiscord/tap"
 tap "christian-sc26/formulae", "https://github.com/Christian-SC26/homebrew-formulae.git"
 tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
 tap "gittower/tap", trusted: true
+tap "gromgit/fuse"
 tap "jackielii/tap", trusted: true
 tap "kdash-rs/kdash", trusted: true
 tap "osx-cross/arm", trusted: true
@@ -210,13 +211,15 @@ brew "zsh-syntax-highlighting"
 # The AI coding agent built for the terminal.
 brew "anomalyco/tap/opencode", trusted: true
 # A tiling window manager for macOS based on binary space partitioning.
-brew "christian-sc26/formulae/yabai", trusted: true
+brew "christian-sc26/formulae/yabai", pin: true, trusted: true
 # A window border system for macOS
 brew "felixkratz/formulae/borders", args: ["HEAD"]
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar", args: ["HEAD"]
 # Next-generation Git Flow tool
 brew "gittower/tap/git-flow-next"
+# File system client based on SSH File Transfer Protocol
+brew "gromgit/fuse/sshfs-mac", trusted: true
 # A fast and simple dashboard for Kubernetes written in Rust
 brew "kdash-rs/kdash/kdash"
 # Pre-built GNU toolchain for Arm Cortex-M and Cortex-R processors
@@ -252,6 +255,7 @@ cask "font-montserrat"
 cask "font-raleway"
 cask "font-sf-mono"
 cask "font-sf-pro"
+cask "font-sketchybar-app-font"
 cask "font-source-serif-4"
 cask "font-symbols-only-nerd-font"
 # Update maps and software, sync with Garmin Connect and register your device
@@ -314,8 +318,6 @@ cask "jackielii/tap/skhd-zig"
 cask "skim"
 # Music streaming service
 cask "spotify"
-# Network filesystem client to connect to SSH servers
-cask "sshfs-mac"
 # Video game digital distribution service
 cask "steam"
 # Web browser focusing on security
