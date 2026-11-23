@@ -171,3 +171,13 @@ cmd + shift - c [
     "Skim" | cmd - c
     * ~
 ]
+
+# Arc-style adjacent tabs in Zen; leave J/K untouched in other apps.
+cmd + shift - j [
+    "Zen" | ctrl - pagedown
+    * ~
+]
+cmd + shift - k [
+    "Zen" | ctrl - pageup
+    * ~
+]
