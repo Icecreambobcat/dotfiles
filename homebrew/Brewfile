@@ -174,8 +174,6 @@ brew "spoofdpi"
 brew "switchaudio-osx"
 # Utility to modify the macOS Accessibility Database (TCC.db)
 brew "tccutil"
-# Tool Command Language
-brew "tcl-tk@8", link: true
 # Programmatically correct mistyped console commands
 brew "thefuck"
 # Official tldr client written in Rust
