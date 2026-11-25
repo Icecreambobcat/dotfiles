@@ -318,6 +318,8 @@ cask "skim"
 cask "spotify"
 # Video game digital distribution service
 cask "steam"
+# Web browser
+cask "thebrowsercompany-dia"
 # Web browser focusing on security
 cask "tor-browser"
 # Open-source code editor
